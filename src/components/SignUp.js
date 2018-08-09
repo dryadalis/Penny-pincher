@@ -7,7 +7,7 @@ import {
 import { auth } from '../firebase';
 import * as routes from '../constants/routes';
 import './SignUp.css'
-import  img from './images/shifaaz-shamoon-465401-unsplash.jpg'
+
 
 const SignUpPage = ({history}) =>
     <div>

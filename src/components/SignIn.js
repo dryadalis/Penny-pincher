@@ -3,14 +3,14 @@ import { withRouter } from  'react-router-dom';
 
 import { SignUpLink } from './SignUp';
 import { auth } from '../firebase';
-import * as routes from '../constants/routes'
+import * as routes from '../constants/routes';
 
 const SignInPage = ({history}) =>
     <div>
         <h1>Sign In</h1>
         <SignInForm history={history} />
         <SignUpLink />
-    </div>
+    </div>;
 const byPropKey = (propertyName, value) => () => ({
    [propertyName]: value,
 });
@@ -38,6 +38,7 @@ class SignInForm extends React.Component {
         auth.doSignInWithEmailAndPassword(email, password)
             .then(() => {
                 this.setState({...INITIAL_STATE});
+                history.push(routes.HOME);
             })
             .catch(error => {
                 this.setState(byPropKey('error', error));
@@ -71,6 +72,7 @@ class SignInForm extends React.Component {
                 <button disabled={isInvalid} type='submit'>
                     Sign In
                 </button>
+                {error && <p>{error.message}</p>}
             </form>
         )
     }
