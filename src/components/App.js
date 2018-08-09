@@ -11,8 +11,8 @@ import SignInPage from './SignIn';
 import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
 import AccountPage from './Account';
-
 import * as routes from '../constants/routes';
+
 
 const App = () =>
     <Router>
