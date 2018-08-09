@@ -8,8 +8,8 @@ const Navigation = () =>
             <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
             <li><Link to={routes.LANDING}>Landing</Link></li>
             <li><Link to={routes.HOME}>Home</Link></li>
-            <li><Link to={routes.ACCOUNT}>Sign In</Link></li>
+            <li><Link to={routes.SIGN_UP}>Sign up</Link></li>
         </ul>
-    </div>
+    </div>;
 
 export default Navigation;
