@@ -6,7 +6,7 @@ import {
 import './App.css';
 import Navigation from './Navigation';
 import LandingPage from './Landing';
-import SignUpPage from './SignUp';
+import SignUpPage from './SignUp/SignUp';
 import SignInPage from './SignIn';
 import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
