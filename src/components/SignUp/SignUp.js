@@ -27,10 +27,9 @@ const SignUpPage = ({history}) =>
             <Col xs={12} md={7} style={{margin: '0', padding: '0'}}>
                 <Image src={img} responsive className='signUpPage--image' />
             </Col>
-            <Col xs={6} md={5} className='signUpPage--form
-            '>
-                <h1 className='signUpPage--header'>sign up</h1>
-                <SignUpForm history={history}/>
+            <Col xs={6} md={5} className='signUpPage--form'>
+                    <h1 className='signUpPage--header'>sign up</h1>
+                    <SignUpForm history={history}/>
             </Col>
         </Row>
     </Grid>
