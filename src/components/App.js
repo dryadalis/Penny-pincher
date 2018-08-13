@@ -24,10 +24,6 @@ const App = () =>
                 component={() => <LandingPage/>}
             />
             <Route
-                exact path={routes.LANDING}
-                component={() => <LandingPage/>}
-            />
-            <Route
                 exact path={routes.SIGN_UP}
                 component={() => <SignUpPage/>}
             />
