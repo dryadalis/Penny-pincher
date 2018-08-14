@@ -50,7 +50,7 @@ class PasswordForgetForm extends React.Component {
                   onChange={event => this.setState(byPropKey('email', event.target.value))}
                   type='text'
                   placeholder='Email Address'
-                  />
+              />
               <button disabled={isInvalid} type='submit'>
                   Reset My Password
               </button>
