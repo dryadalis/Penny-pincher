@@ -4,24 +4,22 @@ import {
     Route,
 } from 'react-router-dom';
 import './App.css';
-import Navigation from './Navigation';
-import LandingPage from './Landing';
+import Navigation from './Navigation/Navigation';
+import LandingPage from './Landing/Landing';
 import SignUpPage from './SignUp/SignUp';
 import SignInPage from './SignIn';
 import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
 import AccountPage from './Account';
 import * as routes from '../constants/routes';
-import { firebase } from '../firebase';
 import withAuthentication from './withAuthentication'
 const App = () =>
     <Router>
         <div>
             <Navigation />
-            <hr/>
             <Route
                 exact path={routes.LANDING}
-                component={() => <LandingPage/>}
+                component={() => <LandingPage />}
             />
             <Route
                 exact path={routes.SIGN_UP}

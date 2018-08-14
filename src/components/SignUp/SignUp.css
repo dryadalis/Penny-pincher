@@ -13,19 +13,16 @@ hr {
     width: 100%;
 }
 .signUpPage--image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 61px);
+    min-height: 100vh;
 }
 .signUpPage--header {
-    margin-top: 100px;
+    margin-top: 200px;
     margin-bottom: 50px;
     text-transform: uppercase;
     font-weight: bold;
 }
 .signUpPage--form {
-    height: calc(100vh - 61px);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
