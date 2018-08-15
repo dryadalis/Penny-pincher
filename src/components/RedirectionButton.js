@@ -3,12 +3,13 @@ import { withRouter } from 'react-router-dom';
 import MainButton from "./MainButton";
 
 
-const RedirectionButton = withRouter(({ title, route, history }) => (
+const RedirectionButton = withRouter(({ title, route, history, className }) => (
     <MainButton
         title={title}
         onClick={() => {
             history.push(route)
         }}
+        className={className}
     />
 ));
 

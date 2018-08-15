@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import AuthUserContext from '../AuthUserContext';
 import SignOutButton from '../SignOut';
@@ -7,36 +6,39 @@ import * as routes from '../../constants/routes'
 import { Navbar,
         Nav,
         NavItem,
-        Button,
 } from 'react-bootstrap'
+import './Navigation.css';
 
 
 const Navigation = ({ authUser }) =>
     <AuthUserContext.Consumer>
         {authUser => authUser
-        ? <NavigationAuth />
+        ? <NavigationAuth/>
         : <NavigationNonAuth/>
         }
     </AuthUserContext.Consumer>
 
 const NavigationAuth = () =>
-    <Navbar collapseOnSelect fixedTop>
+    <Navbar
+        collapseOnSelect
+        fixedTop
+        >
         <Navbar.Header>
-            <Navbar.Brand className="nav--logo">
-                <a href='#'>Penny-pincher</a>
+            <Navbar.Brand className="navbar--brand" >
+                PENNY-PINCHER
             </Navbar.Brand>
             <Navbar.Toggle/>
         </Navbar.Header>
         <Navbar.Collapse>
             <Nav pullRight>
-                <NavItem>
-                    <Link to={routes.LANDING}>Landing</Link>
+                <NavItem href={routes.LANDING}>
+                    Landing
                 </NavItem>
-                <NavItem>
-                    <Link to={routes.HOME}>Home</Link>
+                <NavItem href={routes.HOME}>
+                    Home
                 </NavItem>
-                <NavItem>
-                    <Link to={routes.ACCOUNT}>Account</Link>
+                <NavItem href={routes.ACCOUNT}>
+                    Account
                 </NavItem>
                 <NavItem>
                     <SignOutButton/>
@@ -46,23 +48,27 @@ const NavigationAuth = () =>
     </Navbar>;
 
 const NavigationNonAuth = () =>
-    <Navbar collapseOnSelect fixedTop>
+    <Navbar
+        collapseOnSelect
+        fixedTop
+        className='navbar'
+    >
         <Navbar.Header>
-            <Navbar.Brand>
-                <a href='#' style={{marginTop:'8%'}}>PENNY-PINCHER</a>
+            <Navbar.Brand className='navbar--brand'>
+                PENNY-PINCHER
             </Navbar.Brand>
             <Navbar.Toggle/>
         </Navbar.Header>
         <Navbar.Collapse>
             <Nav pullRight>
-                <NavItem>
-                    <Link to={routes.LANDING}>Landing</Link>
+                <NavItem href={routes.LANDING}>
+                    Landing
                 </NavItem>
-                <NavItem>
-                    <Link to={routes.SIGN_IN}>Sign In</Link>
+                <NavItem href={routes.SIGN_IN}>
+                    Sign In
                 </NavItem>
-                <NavItem>
-                    <Link to={routes.SIGN_UP}>Sign Up</Link>
+                <NavItem href={routes.SIGN_UP}>
+                    Sign Up
                 </NavItem>
             </Nav>
         </Navbar.Collapse>

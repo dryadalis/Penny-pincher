@@ -2,10 +2,11 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 
 
-const MainButton = ({ title, onClick }) => (
+const MainButton = ({ title, onClick, className }) => (
     <Button
-        type='button'
+        type='submit'
         onClick={onClick}
+        className={className}
     >
         {title}
     </Button>
