@@ -1,0 +1,35 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arvo', sans-serif;
+}
+
+.container {
+    width: 100%;
+}
+
+.signUp--button {
+    margin-left: 12px;
+    background-color: #ff751a;
+    border-radius: 0;
+    padding: 20px;
+    font-size: 18px;
+    margin-top: 30px;
+    border: none;
+    text-transform: uppercase;
+}
+.signUp--button:hover {
+    background-color:  #ff6600;
+}
+.btn[disabled]:hover {
+    background-color: #ffa366;
+}
+.signUp--checkbox {
+    display: flex;
+    align-items: baseline;
+}
+input[type=checkbox] {
+    transform: scale(1.1);
+}

@@ -62,12 +62,12 @@ const NavigationNonAuth = () =>
         <Navbar.Collapse>
             <Nav pullRight>
                 <NavItem href={routes.LANDING}>
-                    Landing
+                    Home
                 </NavItem>
-                <NavItem href={routes.SIGN_IN}>
-                    Sign In
+                <NavItem href={routes.SIGN_IN} id='logIn'>
+                    Log In
                 </NavItem>
-                <NavItem href={routes.SIGN_UP}>
+                <NavItem href={routes.SIGN_UP} id="signUp">
                     Sign Up
                 </NavItem>
             </Nav>

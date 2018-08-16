@@ -1,0 +1,17 @@
+.mainForm--container {
+    min-height: 100vh;
+    background-color: #99ddff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainForm--header {
+    color: white;
+    margin-top: 200px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 50px
+}

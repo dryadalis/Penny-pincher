@@ -7,8 +7,8 @@ import {
 } from 'react-bootstrap'
 
 import './Landing.css';
-import { RedirectionButton } from "../RedirectionButton";
-import img from '../images/imageedit_6_2261919941.png';
+import { RedirectionButton } from "../../Buttons/RedirectionButton";
+import img from '../../images/imageedit_6_2261919941.png';
 
 const LandingPage = () =>
     <Grid className="landingPage">

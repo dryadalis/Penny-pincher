@@ -5,9 +5,9 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import Navigation from './Navigation/Navigation';
-import LandingPage from './Landing/Landing';
-import SignUpPage from './SignUp/SignUp';
-import SignInPage from './SignIn';
+import LandingPage from './SignForm/Landing/Landing';
+import SignUpPage from './SignForm/SignUp/SignUp';
+import SignInPage from './SignForm/SignIn';
 import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
 import AccountPage from './Account';

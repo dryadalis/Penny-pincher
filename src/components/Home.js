@@ -1,11 +1,12 @@
-import React from 'react';
+import React from 'react'
 
-
-
-const HomePage = () =>
-    <div>
-        <h1>Home</h1>
-        <p>The Home Page is accessible by every signed in user.</p>
-    </div>
-
+class HomePage extends React.Component {
+    render() {
+        return(
+          <div style={{marginTop: '200px'}}>
+              <h1>Your Wallet</h1>
+          </div>
+        );
+    }
+}
 export default HomePage;

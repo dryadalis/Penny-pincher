@@ -4,5 +4,27 @@
 .navbar--brand {
     margin-top: 8%;
 }
-
-
+#logIn {
+    text-align: center;
+    color: #99ddff;
+    border: 2px solid #99ddff;
+    font-weight: bolder;
+    width: 100px;
+}
+#logIn:hover {
+    color: white;
+    background-color: #99ddff;
+    transition: all 1s ease;
+}
+#signUp {
+    text-align: center;
+    color: #ff751a;
+    width: 100px;
+    border: 2px solid #ff751a;
+    font-weight: bolder;
+}
+#signUp:hover {
+    color: white;
+    background-color: #ff751a;
+    transition: all 1s ease;
+}

@@ -2,17 +2,28 @@ import React from 'react';
 import { withRouter } from  'react-router-dom';
 
 import { SignUpLink } from './SignUp/SignUp';
-import { auth } from '../firebase';
-import * as routes from '../constants/routes';
-import { PasswordForgetLink} from "./PasswordForget";
+import { auth } from '../../firebase/index';
+import * as routes from '../../constants/routes';
+import { PasswordForgetLink} from "../PasswordForget";
+import {Grid, Row } from 'react-bootstrap';
+import { MainImage } from "./MainImage/MainImage";
+import MainForm from "./MainForm/MainForm";
+import MainInput from '../SignForm/MainInput/MainInput';
+import { Form } from 'react-bootstrap';
+
 
 const SignInPage = ({history}) =>
-    <div>
-        <h1>Sign In</h1>
-        <SignInForm history={history} />
-        <PasswordForgetLink />
-        <SignUpLink />
-    </div>;
+    <Grid style={{width:'100%'}}>
+        <Row>
+                <MainImage />
+                <MainForm title={"Sign In"}>
+                    <SignInForm history={history} />
+                    <PasswordForgetLink />
+                    <SignUpLink />
+                </MainForm>
+        </Row>
+    </Grid>;
+
 const byPropKey = (propertyName, value) => () => ({
    [propertyName]: value,
 });
@@ -58,24 +69,24 @@ class SignInForm extends React.Component {
             password === '' ||
             email === '';
         return (
-            <form onSubmit={this.onSubmit}>
-                <input
+            <Form onSubmit={this.onSubmit}  horizontal style={{width:'320px'}}>
+                <MainInput
                     value={email}
                     onChange={event => this.setState(byPropKey('email', event.target.value))}
-                    type='text'
-                    placeholder="Email Address"
-                    />
-                <input
+                    placeholder={'Email Address'}
+                    type={'text'}
+                />
+                <MainInput
                     value={password}
                     onChange={event => this.setState(byPropKey('password', event.target.value))}
-                    type='password'
-                    placeholder="Password"
+                    type={'password'}
+                    placeholder={'Password'}
                 />
                 <button disabled={isInvalid} type='submit'>
                     Sign In
                 </button>
                 {error && <p>{error.message}</p>}
-            </form>
+        </Form>
         )
     }
 }

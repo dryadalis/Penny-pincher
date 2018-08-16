@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import * as routes from '../constants/routes'
 import { auth } from '../firebase';
-import MainButton from "./MainButton";
+import MainButton from "./Buttons/MainButton";
 
 const SignOutButton = withRouter(({ history }) => (
     <MainButton
