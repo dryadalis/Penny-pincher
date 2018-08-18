@@ -6,8 +6,7 @@ import {
 import {Grid,
     Row,
     Form,
-    Button,
-    Checkbox
+    Checkbox,
 } from 'react-bootstrap';
 
 import { auth } from '../../../firebase/index';
@@ -16,7 +15,7 @@ import './SignUp.css'
 import MainForm from "../MainForm/MainForm";
 import { MainImage } from '../MainImage/MainImage';
 import MainInput from '../MainInput/MainInput';
-
+import MainButton from "../../Buttons/MainButton";
 
 const SignUpPage = ({history}) =>
     <Grid>
@@ -82,7 +81,7 @@ class SignUpForm extends Component{
             username === '';
 
         return (
-            <Form onSubmit={this.onSubmit} horizontal style={{width: '320px'}} >
+            <Form onSubmit={this.onSubmit} className='sign--form' >
                 <MainInput
                     value={username}
                     onChange={event => this.setState(byPropKey('username', event.target.value))}
@@ -107,19 +106,16 @@ class SignUpForm extends Component{
                     type={'password'}
                     placeholder={'Confirm Password'}
                 />
-                <Checkbox required
-                          className="signUp--checkbox">
+                <Checkbox
+                    required
+                    className="signUp--checkbox">
                     I agree to the <strong><a href='#'>Terms of User</a></strong>
                 </Checkbox>
-                <Button
-                    type='submit'
+                <MainButton
+                    type='secondary'
                     disabled={isInValid}
-                    bsStyle="primary"
-                    bsSize="large"
-                    block
-                    className="signUp--button">
-                    Sign Up
-                </Button>
+                    className="signUp--button"
+                    title={"Sign Up"} />
                 { error && <p>{error.message}</p>}
             </Form>
         );
@@ -129,8 +125,8 @@ const SignUpLink = () =>
     <p>
         Don't have an account?
         {' '}
-        <Link to={routes.SIGN_UP}> Sign Up </Link>
-    </p>
+        <Link to={routes.SIGN_UP}> Sign Up! </Link>
+    </p>;
 export default withRouter(SignUpPage);
 export {
     SignUpForm,

@@ -18,7 +18,7 @@ const LandingPage = () =>
                 <p className='landingPage--text__para'>Because money matters.</p>
 
                 <RedirectionButton
-                    className={'landingPage--btn'}
+                    type={'primary'}
                     route={"SignUp"}
                     title={"Try free for 20 days"}/>
             </Col>

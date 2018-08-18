@@ -5,6 +5,7 @@ import MainButton from "./MainButton";
 
 const RedirectionButton = withRouter(({ title, route, history, className }) => (
     <MainButton
+        type={'primary'}
         title={title}
         onClick={() => {
             history.push(route)

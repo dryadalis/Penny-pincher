@@ -1,15 +1,30 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import c from 'classnames'
+import '../Buttons/button.css';
 
 
-const MainButton = ({ title, onClick, className }) => (
-    <Button
-        type='submit'
+export const TYPES = {
+    PRIMARY: 'primary',
+    SECONDARY: 'secondary',
+};
+
+const MainButton = ({ title, onClick, type, disabled}) => (
+    <button
+        disabled={disabled}
         onClick={onClick}
-        className={className}
+        className={
+            c(
+                'button',
+                {
+                    'primary': type === TYPES.PRIMARY,
+
+                    'secondary': type === TYPES.SECONDARY,
+                },
+            )
+        }
     >
         {title}
-    </Button>
+    </button>
 );
 
 export default MainButton;

@@ -10,7 +10,7 @@ import { MainImage } from "./MainImage/MainImage";
 import MainForm from "./MainForm/MainForm";
 import MainInput from '../SignForm/MainInput/MainInput';
 import { Form } from 'react-bootstrap';
-
+import MainButton from '../Buttons/MainButton'
 
 const SignInPage = ({history}) =>
     <Grid style={{width:'100%'}}>
@@ -69,7 +69,7 @@ class SignInForm extends React.Component {
             password === '' ||
             email === '';
         return (
-            <Form onSubmit={this.onSubmit}  horizontal style={{width:'320px'}}>
+            <Form onSubmit={this.onSubmit}  className='sign--form'>
                 <MainInput
                     value={email}
                     onChange={event => this.setState(byPropKey('email', event.target.value))}
@@ -82,9 +82,7 @@ class SignInForm extends React.Component {
                     type={'password'}
                     placeholder={'Password'}
                 />
-                <button disabled={isInvalid} type='submit'>
-                    Sign In
-                </button>
+                <MainButton disabled={isInvalid} type='secondary' onClick={this.onSubmit} title={'Sign In'} />
                 {error && <p>{error.message}</p>}
         </Form>
         )
