@@ -34,3 +34,15 @@
     background-color: #ffa366;
     cursor: not-allowed;
 }
+.add {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    color: white;
+    background-color: #00cccc;
+    border: none;
+    text-align: center;
+}
+.add:focus {
+    outline: none;
+}

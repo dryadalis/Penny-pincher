@@ -6,6 +6,7 @@ import '../Buttons/button.css';
 export const TYPES = {
     PRIMARY: 'primary',
     SECONDARY: 'secondary',
+    ADD: 'add',
 };
 
 const MainButton = ({ title, onClick, type, disabled}) => (
@@ -19,6 +20,8 @@ const MainButton = ({ title, onClick, type, disabled}) => (
                     'primary': type === TYPES.PRIMARY,
 
                     'secondary': type === TYPES.SECONDARY,
+
+                    'add': type === TYPES.ADD,
                 },
             )
         }
