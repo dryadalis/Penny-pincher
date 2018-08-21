@@ -3,7 +3,6 @@ import './home.css';
 import { Grid, Row, Col } from 'react-bootstrap';
 import Popup from './Popup'
 
-
 class HomePage extends React.Component {
     render() {
         return(

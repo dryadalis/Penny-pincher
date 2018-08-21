@@ -13,7 +13,7 @@ import HomePage from './Home';
 import AccountPage from './Account';
 import * as routes from '../constants/routes';
 import withAuthentication from './withAuthentication';
-import '../firebasedb/firebasedb';
+import '../firebasedb/addToDb';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
