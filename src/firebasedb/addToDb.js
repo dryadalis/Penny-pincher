@@ -48,21 +48,25 @@ class AddToDb extends React.Component {
             note,
             error,
         } = this.state;
+
         return(
+            <div>
             <Form onSubmit={this.onSubmit}>
                 <FormGroup>
                 <FormControl
+                        required
                         componentClass='select'
                         value={category}
                         onChange={event => this.setState(byPropKey('category', event.target.value))}
                 >
                     <option value="" selected disabled>Select category</option>
-                    <option value="food">Food</option>
                     <option value="clothes">Clothes</option>
                     <option value="fuel">Fuel</option>
+                    <option value="food">Food</option>
                 </FormControl>
                 </FormGroup>
                 <MainInput
+                    required
                     value={price}
                     onChange={event => this.setState(byPropKey('price', event.target.value))}
                     type={'number'}
@@ -74,9 +78,11 @@ class AddToDb extends React.Component {
                     type={'text'}
                     placeholder={'Note'}
                 />
-                <button type='submit' onClick={this.onSubmit}>Add</button>
                 {error && <p>{error.message}</p>}
             </Form>
+                <hr />
+                <button type='submit' onClick={this.onSubmit}>Add</button>
+            </div>
         );
     }
 }

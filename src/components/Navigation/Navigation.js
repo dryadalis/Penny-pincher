@@ -41,7 +41,7 @@ const NavigationAuth = () =>
                     Account
                 </NavItem>
                 <NavItem>
-                    <SignOutButton/>
+                    <SignOutButton />
                 </NavItem>
             </Nav>
         </Navbar.Collapse>

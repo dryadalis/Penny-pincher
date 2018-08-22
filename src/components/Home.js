@@ -1,7 +1,8 @@
 import React from 'react';
 import './home.css';
 import { Grid, Row, Col } from 'react-bootstrap';
-import Popup from './Popup'
+import Popup from './Popup';
+import GetFromDb from '../firebasedb/GetFromDb';
 
 class HomePage extends React.Component {
     render() {
@@ -10,6 +11,7 @@ class HomePage extends React.Component {
                 <Row>
                     <Col xs={12}>
                           <h1 className='home--header'>Your Wallet</h1>
+                        <GetFromDb />
                         <Popup/>
                     </Col>
                 </Row>

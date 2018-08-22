@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
+import {Modal} from 'react-bootstrap';
 import MainButton from './Buttons/MainButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -38,9 +38,6 @@ class Popup extends React.Component {
                     <Modal.Body>
                         <AddToDb />
                     </Modal.Body>
-                    <Modal.Footer>
-                        <MainButton type='secondary' title='Add'/>
-                    </Modal.Footer>
                 </Modal>
             </div>
         );
