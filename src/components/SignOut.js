@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom';
 import * as routes from '../constants/routes'
 import { auth } from '../firebase';
 import MainButton from "./Buttons/MainButton";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 
 const SignOutButton = withRouter(({ history }) => (
     <MainButton
@@ -10,7 +12,8 @@ const SignOutButton = withRouter(({ history }) => (
             history.push(routes.LANDING);
             auth.doSignOut();
         }}
-        title={'Sign out'}
+        title={ <FontAwesomeIcon icon={faSignOutAlt} />}
+        type='signOut'
     />
 ));
 export default SignOutButton;

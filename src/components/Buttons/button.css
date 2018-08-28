@@ -22,7 +22,7 @@
     background-color: #ff751a;
     border-radius: 0;
     padding: 20px;
-    font-size: 18px;
+ ff   font-size: 18px;
     border: none;
     text-transform: uppercase;
     width: 320px;
@@ -45,4 +45,12 @@
 }
 .add:focus {
     outline: none;
+}
+.signOut {
+    background-color: white;
+    font-weight: bolder;
+    border: none;
+    transform: scale(1.6);
+    color: #ff751a;
+
 }

@@ -7,6 +7,7 @@ export const TYPES = {
     PRIMARY: 'primary',
     SECONDARY: 'secondary',
     ADD: 'add',
+    SIGNOUT: 'signOut',
 };
 
 const MainButton = ({ title, onClick, type, disabled}) => (
@@ -22,6 +23,10 @@ const MainButton = ({ title, onClick, type, disabled}) => (
                     'secondary': type === TYPES.SECONDARY,
 
                     'add': type === TYPES.ADD,
+
+                    'signOut': type ==TYPES.SIGNOUT,
+
+
                 },
             )
         }
