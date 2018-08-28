@@ -2,6 +2,7 @@ import React from 'react';
 import { db } from '../firebase';
 import 'firebase/firestore';
 import { Form, FormControl, FormGroup } from 'react-bootstrap';
+import {Loader} from "../../components/Loader";
 
 const byPropKey = (propertyName, value) => () => ({
     [propertyName]: value,
@@ -10,6 +11,7 @@ const INITIAL_STATE = {
     category: '',
     price: '',
     note: '',
+    loading: false,
     error: null,
 };
 
@@ -25,6 +27,7 @@ class AddToDb extends React.Component {
             price,
             note,
         } = this.state;
+        this.setState({loading: true});
         db.collection('receits').add({
             category: category,
             price: price,
@@ -48,8 +51,12 @@ class AddToDb extends React.Component {
             price,
             note,
             error,
+            loading,
         } = this.state;
 
+        if(loading) {
+            return <Loader />
+        } else {
             return (
                 <div>
                     <Form onSubmit={this.onSubmit}>
@@ -91,6 +98,7 @@ class AddToDb extends React.Component {
                     <button type='submit' onClick={this.onSubmit}>Add</button>
                 </div>
             );
+        }
         }
     }
 
