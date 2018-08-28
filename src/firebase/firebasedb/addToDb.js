@@ -2,7 +2,6 @@ import React from 'react';
 import { db } from '../firebase';
 import 'firebase/firestore';
 import { Form, FormControl, FormGroup } from 'react-bootstrap';
-import MainInput from '../../components/SignForm/MainInput/MainInput';
 
 const byPropKey = (propertyName, value) => () => ({
     [propertyName]: value,
@@ -49,7 +48,6 @@ class AddToDb extends React.Component {
             price,
             note,
             error,
-            loading,
         } = this.state;
 
             return (
@@ -68,19 +66,24 @@ class AddToDb extends React.Component {
                                 <option value="food">Food</option>
                             </FormControl>
                         </FormGroup>
-                        <MainInput
-                            required
-                            value={price}
-                            onChange={event => this.setState(byPropKey('price', event.target.value))}
-                            type={'number'}
-                            placeholder={'Price'}
-                        />
-                        <MainInput
-                            value={note}
-                            onChange={event => this.setState(byPropKey('note', event.target.value))}
-                            type={'text'}
-                            placeholder={'Note'}
-                        />
+                        <FormGroup>
+                            <FormControl
+                                required
+                                value={price}
+                                onChange={event => this.setState(byPropKey('price', event.target.value))}
+                                min='0'
+                                type='number'
+                                placeholder='Price'
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <FormControl
+                                value={note}
+                                onChange={event => this.setState(byPropKey('note', event.target.value))}
+                                type='text'
+                                placeholder='Note'
+                            />
+                        </FormGroup>
                         {error && <p>{error.message}</p>}
                     </Form>
                     <hr/>

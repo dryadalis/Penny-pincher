@@ -13,7 +13,7 @@ import HomePage from './Home';
 import AccountPage from './Account';
 import * as routes from '../constants/routes';
 import withAuthentication from './withAuthentication';
-import '../firebasedb/addToDb';
+import '../firebase/firebasedb/addToDb';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
 
@@ -49,5 +49,5 @@ const App = () =>
                 component={() => <AccountPage/>}
             />
         </div>
-    </Router>
+    </Router>;
 export default withAuthentication(App);

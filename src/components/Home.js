@@ -2,7 +2,7 @@ import React from 'react';
 import './home.css';
 import { Grid, Row, Col } from 'react-bootstrap';
 import Popup from './Popup';
-import GetFromDb from '../firebasedb/GetFromDb';
+import GetFromDb from '../firebase/firebasedb/GetFromDb';
 
 class HomePage extends React.Component {
     render() {

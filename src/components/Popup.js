@@ -4,7 +4,7 @@ import MainButton from './Buttons/MainButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import './modal.css';
-import AddToDb from '../firebasedb/addToDb';
+import AddToDb from "../firebase/firebasedb/addToDb";
 
 class Popup extends React.Component {
     constructor(props, context) {
@@ -36,7 +36,7 @@ class Popup extends React.Component {
                         <Modal.Title>Add transaction</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <AddToDb />
+                       <AddToDb/>
                     </Modal.Body>
                 </Modal>
             </div>
