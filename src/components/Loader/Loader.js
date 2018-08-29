@@ -17,7 +17,7 @@ const Loader = () => (
             <div></div>
             <div></div>
         </div>
-        <h4>Adding...</h4>
+        <h4 style={{color: '#ff00ccc'}}>Adding...</h4>
     </div>
     );
 

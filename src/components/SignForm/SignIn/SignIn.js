@@ -1,16 +1,16 @@
 import React from 'react';
 import { withRouter } from  'react-router-dom';
 
-import { SignUpLink } from './SignUp/SignUp';
-import { auth } from '../../firebase/index';
-import * as routes from '../../constants/routes';
-import { PasswordForgetLink} from "../PasswordForget";
+import { SignUpLink } from '../SignUp/SignUp';
+import { auth } from '../../../firebase/index';
+import * as routes from '../../../constants/routes';
+import { PasswordForgetLink} from "../../PasswordForget";
 import {Grid, Row } from 'react-bootstrap';
-import { MainImage } from "./MainImage/MainImage";
-import MainForm from "./MainForm/MainForm";
-import MainInput from '../SignForm/MainInput/MainInput';
+import { MainImage } from "../MainImage/MainImage";
+import MainForm from "../MainSignForm/MainForm";
+import MainInput from '../MainInput/MainInput';
 import { Form } from 'react-bootstrap';
-import MainButton from '../Buttons/MainButton'
+import MainButton from '../../Buttons/MainButton'
 
 const SignInPage = ({history}) =>
     <Grid style={{width:'100%'}}>

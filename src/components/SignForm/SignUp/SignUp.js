@@ -12,7 +12,7 @@ import {Grid,
 import { auth } from '../../../firebase/index';
 import * as routes from '../../../constants/routes';
 import './SignUp.css'
-import MainForm from "../MainForm/MainForm";
+import MainForm from "../MainSignForm/MainForm";
 import { MainImage } from '../MainImage/MainImage';
 import MainInput from '../MainInput/MainInput';
 import MainButton from "../../Buttons/MainButton";

@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import * as routes from '../constants/routes'
-import { auth } from '../firebase';
-import MainButton from "./Buttons/MainButton";
+import * as routes from '../../../constants/routes'
+import { auth } from '../../../firebase/index';
+import MainButton from "../../Buttons/MainButton";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 

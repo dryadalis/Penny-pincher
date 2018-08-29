@@ -1,7 +1,7 @@
 import React from 'react';
 
 import AuthUserContext from '../AuthUserContext';
-import SignOutButton from '../SignOut';
+import SignOutButton from '../SignForm/SignOut/SignOut';
 import * as routes from '../../constants/routes'
 import { Navbar,
         Nav,

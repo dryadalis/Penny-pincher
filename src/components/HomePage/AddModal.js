@@ -1,12 +1,12 @@
 import React from 'react';
 import {Modal} from 'react-bootstrap';
-import MainButton from './Buttons/MainButton'
+import MainButton from '../Buttons/MainButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import './modal.css';
-import AddToDb from "../firebase/firebasedb/addToDb";
+import AddToDb from "../../firebase/firebasedb/addToDb";
 
-class Popup extends React.Component {
+class AddModal extends React.Component {
     constructor(props, context) {
         super(props, context);
 
@@ -36,7 +36,7 @@ class Popup extends React.Component {
                         <Modal.Title>Add transaction</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                       <AddToDb/>
+                       <AddToDb />
                     </Modal.Body>
                 </Modal>
             </div>
@@ -44,5 +44,4 @@ class Popup extends React.Component {
     }
 }
 
-
-export default Popup;
+export default AddModal;

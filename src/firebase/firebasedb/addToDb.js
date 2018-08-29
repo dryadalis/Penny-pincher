@@ -2,7 +2,9 @@ import React from 'react';
 import { db } from '../firebase';
 import 'firebase/firestore';
 import { Form, FormControl, FormGroup } from 'react-bootstrap';
-import {Loader} from "../../components/Loader";
+import {Loader} from "../../components/Loader/Loader";
+import Context from './validationContext/validationContext';
+import ContextProvider from './validationContext/validationProvider';
 
 const byPropKey = (propertyName, value) => () => ({
     [propertyName]: value,
@@ -20,6 +22,7 @@ class AddToDb extends React.Component {
         super(props);
 
         this.state={...INITIAL_STATE};
+        this.onSubmit = this.onSubmit.bind(this);
     }
     onSubmit = (error) => {
         const {
@@ -35,15 +38,15 @@ class AddToDb extends React.Component {
         })
             .then(() => {
                 this.setState({...INITIAL_STATE});
+                this.setState({loading: false});
+                this.props.toggle();
             })
             .catch(error => {
                 this.setState(byPropKey('error', error));
             });
-
-        error.preventDefault()
+        error.preventDefault();
 
     };
-
 
     render(){
         const {
@@ -54,7 +57,7 @@ class AddToDb extends React.Component {
             loading,
         } = this.state;
 
-        if(loading) {
+        if (loading) {
             return <Loader />
         } else {
             return (
@@ -104,4 +107,11 @@ class AddToDb extends React.Component {
 
 
 
-export default AddToDb;
+export default (props) =>
+    <Context.Consumer>
+        {
+            (value) => (
+                <AddToDb {...props} {...value}/>
+            )
+        }
+    </Context.Consumer>

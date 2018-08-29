@@ -5,17 +5,18 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import Navigation from './Navigation/Navigation';
-import LandingPage from './SignForm/Landing/Landing';
+import LandingPage from './LandingPage/Landing';
 import SignUpPage from './SignForm/SignUp/SignUp';
-import SignInPage from './SignForm/SignIn';
+import SignInPage from './SignForm/SignIn/SignIn';
 import PasswordForgetPage from './PasswordForget';
-import HomePage from './Home';
+import HomePage from './HomePage/Home';
 import AccountPage from './Account';
 import * as routes from '../constants/routes';
 import withAuthentication from './withAuthentication';
 import '../firebase/firebasedb/addToDb';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
+import ContextProvider from "../firebase/firebasedb/validationContext/validationProvider";
 
 library.add(faStroopwafel);
 
@@ -42,7 +43,7 @@ const App = () =>
             />
             <Route
                 exact path={routes.HOME}
-                component={() => <HomePage/>}
+                component={() => <ContextProvider><HomePage/></ContextProvider>}
             />
             <Route
                 exact path={routes.ACCOUNT}

@@ -1,0 +1,11 @@
+
+.getFromDb--list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+.getFromDb--item {
+    text-align: center;
+}

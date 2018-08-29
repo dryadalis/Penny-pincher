@@ -1,5 +1,8 @@
 import React from 'react';
 import { db } from '../firebase';
+import './getFromDb.css';
+import Context from '../firebasedb/validationContext/validationContext';
+
 
 class GetFromDb extends React.Component {
     constructor(props) {
@@ -13,20 +16,32 @@ class GetFromDb extends React.Component {
         db.collection('receits')
             .get()
             .then((querySnapshot) => {
-                querySnapshot.docs.map((doc) => {
-                    doc.data();
-                })
+                const data = querySnapshot.docs.map((doc) => doc.data());
+                this.setState({data});
             })
             .catch((error) => this.setState({error}));
     }
+    componentDidUpdate(prevProps){
+        if(this.props.isInvalid !== prevProps.isInvalid && this.props.isInvalid) {
+            db.collection('receits')
+                .get()
+                .then((querySnapshot) => {
+                    const data = querySnapshot.docs.map((doc) => doc.data());
+                    this.setState({data});
+                    this.props.toggle();
+                })
+                .catch((error) => this.setState({error}));
+        }
+    }
 
     render() {
+        console.log(this.props);
         const {data, error} = this.state;
         return(
             <div>
-                <ul>
+                <ul className="getFromDb--list">
                     {data.map(item => (
-                        <li>{item.category} - {item.price}</li>
+                        <li key={item.id} className="getFromDb--item">{item.category} - {item.price}</li>
                     ))}
                 </ul>
 
@@ -36,4 +51,11 @@ class GetFromDb extends React.Component {
         )
     }
 }
-export default GetFromDb;
+export default (props) =>
+    <Context.Consumer>
+        {
+            (value) => (
+                <GetFromDb {...props} {...value} />
+            )
+        }
+    </Context.Consumer>
