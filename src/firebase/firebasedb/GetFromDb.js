@@ -2,6 +2,8 @@ import React from 'react';
 import { db } from '../firebase';
 import './getFromDb.css';
 import Context from '../firebasedb/validationContext/validationContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 
 
 class GetFromDb extends React.Component {
@@ -10,6 +12,7 @@ class GetFromDb extends React.Component {
         this.state = {
             data: [],
             error: [],
+            sum: 0,
         }
     }
 
@@ -33,8 +36,8 @@ class GetFromDb extends React.Component {
                 })
                 .catch((error) => this.setState({error}));
         }
-    }
 
+    }
     render() {
         const {data, error} = this.state;
         return(
@@ -43,17 +46,17 @@ class GetFromDb extends React.Component {
                     {data.map((item, i) => (
                         <li key={i}
                             className="getFromDb--item">
-                            {item.category} - {item.price}
-                            {item.id && <button onClick={() =>
+                            <div className="getFromDb--item__category"> {item.category} </div>
+                            <div className="getFromDb--item__price"> {item.price}zł </div>
+                            {item.id && <a onClick={() =>
                                 db.collection('receits')
                                     .doc(item.id)
                                     .delete()
                                     .then(this.props.toggle())
-                            }>X</button>}
+                            }><FontAwesomeIcon icon={faTrashAlt} title="Delete" /></a>}
                             </li>
                     ))}
                 </ul>
-
                 {error && <p>{error.message}</p>}
             </div>
 

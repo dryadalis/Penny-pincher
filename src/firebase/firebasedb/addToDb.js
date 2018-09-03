@@ -13,7 +13,6 @@ const INITIAL_STATE = {
     category: '',
     price: '',
     note: '',
-    id: '',
     loading: false,
     error: null,
 };
