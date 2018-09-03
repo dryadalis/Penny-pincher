@@ -3,7 +3,7 @@ import { db } from '../firebase';
 import './getFromDb.css';
 import Context from '../firebasedb/validationContext/validationContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt, faPencilAlt} from '@fortawesome/free-solid-svg-icons';
 
 
 class GetFromDb extends React.Component {
@@ -12,7 +12,6 @@ class GetFromDb extends React.Component {
         this.state = {
             data: [],
             error: [],
-            sum: 0,
         }
     }
 
@@ -45,24 +44,31 @@ class GetFromDb extends React.Component {
                 <ul className="getFromDb--list">
                     {data.map((item, i) => (
                         <li key={i}
-                            className="getFromDb--item">
-                            <div className="getFromDb--item__category"> {item.category} </div>
-                            <div className="getFromDb--item__price"> {item.price}zł </div>
-                            {item.id && <a onClick={() =>
-                                db.collection('receits')
-                                    .doc(item.id)
-                                    .delete()
-                                    .then(this.props.toggle())
-                            }><FontAwesomeIcon icon={faTrashAlt} title="Delete" /></a>}
-                            </li>
+                            className="getFromDb--item__wrapper"
+                            >
+                            <div className="getFromDb--item">
+                                <div className="getFromDb--item__category"> {item.category} </div>
+                                <div className="getFromDb--item__price"> {item.price}zł </div>
+                                {item.id &&
+                                <a onClick={() =>
+                                    db.collection('receits')
+                                        .doc(item.id)
+                                        .delete()
+                                        .then(this.props.toggle())
+                                }><FontAwesomeIcon icon={faTrashAlt} /></a>}
+                            </div>
+                           <div className="getFromDb--item__note">
+                                <FontAwesomeIcon icon={faPencilAlt}/> {item.note}
+                                </div>
+                        </li>
                     ))}
                 </ul>
                 {error && <p>{error.message}</p>}
             </div>
-
         )
     }
 }
+
 export default (props) =>
     <Context.Consumer>
         {
