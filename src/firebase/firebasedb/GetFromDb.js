@@ -12,6 +12,7 @@ class GetFromDb extends React.Component {
             error: [],
         }
     }
+
     componentDidMount() {
         db.collection('receits')
             .get()
@@ -35,13 +36,21 @@ class GetFromDb extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         const {data, error} = this.state;
         return(
             <div>
                 <ul className="getFromDb--list">
-                    {data.map(item => (
-                        <li key={item.id} className="getFromDb--item">{item.category} - {item.price}</li>
+                    {data.map((item, i) => (
+                        <li key={i}
+                            className="getFromDb--item">
+                            {item.category} - {item.price}
+                            {item.id && <button onClick={() =>
+                                db.collection('receits')
+                                    .doc(item.id)
+                                    .delete()
+                                    .then(this.props.toggle())
+                            }>X</button>}
+                            </li>
                     ))}
                 </ul>
 

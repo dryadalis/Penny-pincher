@@ -13,6 +13,7 @@ const INITIAL_STATE = {
     category: '',
     price: '',
     note: '',
+    id: '',
     loading: false,
     error: null,
 };
@@ -31,10 +32,13 @@ class AddToDb extends React.Component {
             note,
         } = this.state;
         this.setState({loading: true});
-        db.collection('receits').add({
+        const newSuggestionReference = db.collection('receits').doc();
+
+        newSuggestionReference.set({
             category: category,
             price: price,
             note: note,
+            id: newSuggestionReference.id
         })
             .then(() => {
                 this.setState({...INITIAL_STATE});
