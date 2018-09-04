@@ -1,7 +1,7 @@
 import React from 'react';
 import './loader.css';
 
-const Loader = () => (
+const Loader = ({title, className}) => (
     <div className="loader-wrapper">
         <div className="lds-spinner">
             <div></div>
@@ -17,7 +17,8 @@ const Loader = () => (
             <div></div>
             <div></div>
         </div>
-        <h4 style={{color: '#ff00ccc'}}>Adding...</h4>
+        <br />
+        <h4 className={className}>{title}</h4>
     </div>
     );
 

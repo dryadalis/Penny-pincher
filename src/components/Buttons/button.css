@@ -49,6 +49,10 @@
 .add:focus {
     outline: none;
 }
+.add:hover {
+    background-color: #00b3b3;
+    transition: all 0.7s ease-in-out;
+}
 .signOut {
     background-color: white;
     font-weight: bolder;

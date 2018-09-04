@@ -38,3 +38,14 @@
     cursor: pointer;
     transform: scale(1.2);
 }
+.loader--getFromDb {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.getFromDb--addButton--wrapper {
+   position: fixed;
+    bottom: 12%;
+    right: 28%;
+}

@@ -6,23 +6,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt, faPencilAlt} from '@fortawesome/free-solid-svg-icons';
 import HomePageWithoutData from './validationContext/NoDataComponent';
 import AddModal from '../../components/HomePage/AddModal';
-
+import {Loader} from "../../components/Loader/Loader";
 
 class GetFromDb extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             data: [],
-            error: [],
+            loading: false,
+            error: null,
         }
     }
 
     componentDidMount() {
+        this.setState({loading: true});
         db.collection('receits')
             .get()
             .then((querySnapshot) => {
                 const data = querySnapshot.docs.map((doc) => doc.data());
                 this.setState({data});
+                this.setState({loading: false})
             })
             .catch((error) => this.setState({error}));
     }
@@ -40,8 +43,10 @@ class GetFromDb extends React.Component {
 
     }
     render() {
-        const {data, error} = this.state;
-        if (data.length <= 0 ) {
+        const {data, error, loading} = this.state;
+        if (loading ) {
+            return <Loader title={"Loading..."} className={"loader--getFromDb"}/>
+        } else if(data.length <= 0) {
             return <HomePageWithoutData/>
         } else {
             return (
@@ -68,7 +73,9 @@ class GetFromDb extends React.Component {
                             </li>
                         ))}
                     </ul>
-                    <AddModal />
+                    <div className="getFromDb--addButton--wrapper">
+                        <AddModal />
+                    </div>
                     {error && <p>{error.message}</p>}
                 </div>
             )

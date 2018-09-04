@@ -4,7 +4,6 @@ import 'firebase/firestore';
 import { Form, FormControl, FormGroup } from 'react-bootstrap';
 import {Loader} from "../../components/Loader/Loader";
 import Context from './validationContext/validationContext';
-import ContextProvider from './validationContext/validationProvider';
 
 const byPropKey = (propertyName, value) => () => ({
     [propertyName]: value,
@@ -61,7 +60,7 @@ class AddToDb extends React.Component {
         } = this.state;
 
         if (loading) {
-            return <Loader />
+            return <Loader title={"Adding..."}/>
         } else {
             return (
                 <div>

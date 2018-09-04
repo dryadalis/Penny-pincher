@@ -24,7 +24,7 @@ const MainButton = ({ title, onClick, type, disabled}) => (
 
                     'add': type === TYPES.ADD,
 
-                    'signOut': type ==TYPES.SIGNOUT,
+                    'signOut': type === TYPES.SIGNOUT,
 
 
                 },
