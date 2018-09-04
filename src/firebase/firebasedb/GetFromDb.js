@@ -65,7 +65,10 @@ class GetFromDb extends React.Component {
                                             .doc(item.id)
                                             .delete()
                                             .then(this.props.toggle())
-                                    }><FontAwesomeIcon icon={faTrashAlt}/></a>}
+                                    }><span title="Delete" aria-hidden="true">
+                                        <FontAwesomeIcon icon={faTrashAlt} />
+                                    </span>
+                                    </a>}
                                 </div>
                                 <div className="getFromDb--item__note">
                                     <FontAwesomeIcon icon={faPencilAlt}/> {item.note}
@@ -73,9 +76,9 @@ class GetFromDb extends React.Component {
                             </li>
                         ))}
                     </ul>
-                    <div className="getFromDb--addButton--wrapper">
+                    <span className="getFromDb--addButton--wrapper" title="Add" >
                         <AddModal />
-                    </div>
+                    </span>
                     {error && <p>{error.message}</p>}
                 </div>
             )

@@ -12,12 +12,14 @@
     justify-content: space-around;
     align-items: center;
     height: 35px;
+
 }
 .getFromDb--item__wrapper {
     width: 300px;
     background-color: white;
     font-size: 14px;
     font-weight: bold;
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.4);
 }
 
 .getFromDb--item__category {
