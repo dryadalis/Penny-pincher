@@ -3,6 +3,9 @@
     background-color: #00cccc;
     border-bottom: 1px solid rgba(0,0,0,0.5);
 }
+.modal--plusIcon {
+    transform: scale(2.5);
+}
 .modal-title {
     font-size: 18px;
     font-weight: bolder;

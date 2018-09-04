@@ -29,7 +29,7 @@ class AddModal extends React.Component {
     render() {
         return (
             <div>
-                <MainButton onClick={this.handleShow} type='add' title={<FontAwesomeIcon icon={faPlus} size='2x' />} />
+                <MainButton onClick={this.handleShow} type='add' title={<FontAwesomeIcon icon={faPlus} className="modal--plusIcon" />} />
 
                 <Modal show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header closeButton className='modal--header'>

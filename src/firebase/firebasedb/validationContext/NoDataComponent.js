@@ -1,12 +1,14 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlusCircle} from '@fortawesome/free-solid-svg-icons';
+import AddModal from '../../../components/HomePage/AddModal'
 
 const HomePageWithoutData = () =>
-    <div style={{marginTop: '100px', textAlign: 'center'}}>
-        <p style={{fontSize: '40px', color: 'white'}}>
-            No saved expenses,
-            <br />tap <FontAwesomeIcon icon={faPlusCircle} style={{color: '#00cccc'}}/> to add one.
+    <div style={{marginTop: '90px', textAlign: 'center'}}>
+        <p style={{color: 'white', fontSize: '36px', margin: '30px'}}>
+            No saved expenses, tap
+        </p>
+            <AddModal />
+        <p style={{color: 'white', fontSize: '36px', margin: '30px'}}>
+            to add one.
         </p>
     </div>;
 
