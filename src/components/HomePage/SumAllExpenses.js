@@ -1,6 +1,7 @@
 import React from 'react';
 import {db} from "../../firebase/firebase";
 import Context from '../../firebase/firebasedb/validationContext/validationContext';
+import './SumAllExpenses.css';
 
 
 class SumAllExpenses extends React.Component {
@@ -8,7 +9,7 @@ class SumAllExpenses extends React.Component {
         super(props);
 
         this.state = {
-            data: [],
+            sum: [],
         }
     }
     componentDidMount() {
@@ -38,14 +39,22 @@ class SumAllExpenses extends React.Component {
         const price = data.map((doc) => doc.price);
         const priceToNumber = price.map(parseFloat);
         const sum = priceToNumber.reduce((a, b) => a + b, 0);
-        this.setState({data: sum});
+        const fixedSum = sum.toFixed(2);
+        this.setState({sum: fixedSum});
     };
 
 
     render() {
-        const { data } = this.state;
+        const { sum } = this.state;
         return(
-                <div>Outcomes: {data}</div>
+            <div style={{display: 'flex', flexDirection: 'row', justifyContent:'space-between'}}>
+                <p style={{margin: '15px'}}>
+                    Outflow:
+                </p>
+                <p style={{color: 'red', margin: '15px'}}>
+                    {sum} ZŁ
+                    </p>
+            </div>
         );
     }
 }
