@@ -7,7 +7,6 @@ class ContextProvider extends React.Component {
 
         this.state = {
             isInvalid: false,
-            data: [],
         }
     }
     toggle = () => {
@@ -16,13 +15,14 @@ class ContextProvider extends React.Component {
             }));
     };
 
+
     render() {
         const {isInvalid} = this.state;
         return (
             <Context.Provider value={{
-                data: [],
                 isInvalid,
-                toggle: this.toggle
+                toggle: this.toggle,
+                convertToNumberAndSum: this.convertToNumberAndSum,
             }}>
                 {this.props.children}
             </Context.Provider>

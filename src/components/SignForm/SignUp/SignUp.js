@@ -113,6 +113,7 @@ class SignUpForm extends Component{
                 </Checkbox>
                 <MainButton
                     type='secondary'
+                    size={'medium'}
                     disabled={isInValid}
                     className="signUp--button"
                     title={"Sign Up"} />

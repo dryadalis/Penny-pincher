@@ -7,12 +7,14 @@ import { faTrashAlt, faPencilAlt} from '@fortawesome/free-solid-svg-icons';
 import HomePageWithoutData from './validationContext/NoDataComponent';
 import AddModal from '../../components/HomePage/AddModal';
 import {Loader} from "../../components/Loader/Loader";
+import SumAllExpenses from '../../components/HomePage/SumAllExpenses';
 
 class GetFromDb extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             data: [],
+            sum: [],
             loading: false,
             error: null,
         }
@@ -25,7 +27,8 @@ class GetFromDb extends React.Component {
             .then((querySnapshot) => {
                 const data = querySnapshot.docs.map((doc) => doc.data());
                 this.setState({data});
-                this.setState({loading: false})
+                this.setState({loading: false});
+
             })
             .catch((error) => this.setState({error}));
     }
@@ -43,7 +46,7 @@ class GetFromDb extends React.Component {
 
     }
     render() {
-        const {data, error, loading} = this.state;
+        const {data, error, loading, } = this.state;
         if (loading ) {
             return <Loader title={"Loading..."} className={"loader--getFromDb"}/>
         } else if(data.length <= 0) {
@@ -52,13 +55,14 @@ class GetFromDb extends React.Component {
             return (
                 <div>
                     <ul className="getFromDb--list">
+                        <SumAllExpenses />
                         {data.map((item, i) => (
                             <li key={i}
                                 className="getFromDb--item__wrapper"
                             >
                                 <div className="getFromDb--item">
                                     <div className="getFromDb--item__category"> {item.category} </div>
-                                    <div className="getFromDb--item__price"> {item.price}zł</div>
+                                    <div className="getFromDb--item__price"> {item.price} zł</div>
                                     {item.id &&
                                     <a onClick={() =>
                                         db.collection('receits')
@@ -74,6 +78,7 @@ class GetFromDb extends React.Component {
                                     <FontAwesomeIcon icon={faPencilAlt}/> {item.note}
                                 </div>
                             </li>
+
                         ))}
                     </ul>
                     <span className="getFromDb--addButton--wrapper" title="Add" >

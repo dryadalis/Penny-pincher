@@ -3,32 +3,22 @@
 }
 .primary {
     background-color: #ff751a;
-    padding: 20px;
     border: none;
-    width: 280px;
-    height: 80px;
     text-align: center;
-    font-size: 18px;
-    font-weight: bold;
     text-transform: uppercase;
     margin-top: 8%;
 }
 .primary:hover {
     transition: all 0.6s ease-in-out;
-    padding: 18px;
     border: 2px solid #ff751a;
     background-color: #99ddff;
     color: #ff751a;
 }
 .secondary {
-    margin: 20px;
+    margin-top: 40px;
     background-color: #ff751a;
     border-radius: 0;
-    padding: 20px;
-    font-size: 18px;
     border: none;
-    text-transform: uppercase;
-    width: 320px;
 }
 .secondary:hover {
     background-color:  #ff6600;
@@ -47,7 +37,7 @@
     text-align: center;
     box-shadow: 0 6px 10px 0 rgba(0,0,0,0.6);
 }
-.add:focus {
+.secondary:focus, .primary:focus, .add:focus {
     outline: none;
 }
 .add:hover {
@@ -60,5 +50,29 @@
     border: none;
     transform: scale(1.6);
     color: #ff751a;
+}
 
+.large {
+    width: 280px;
+    height: 80px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.medium {
+    width: 320px;
+    height: 55px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.small {
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+}
+.small:hover {
+    background-color: white;
+    color: #ff751a;
 }

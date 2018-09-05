@@ -22,10 +22,12 @@ const LandingPage = () =>
                     {authUser=> authUser
                         ?  <MainButton
                         type={'primary'}
+                        size={'large'}
                         title={"Learn more"}
                         />
                         : <RedirectionButton
                             type={'primary'}
+                            size={'large'}
                             route={"SignUp"}
                             title={"Try free for 20 days"}
                         />

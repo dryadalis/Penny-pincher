@@ -2,6 +2,7 @@ import React from 'react';
 import { db } from '../firebase';
 import 'firebase/firestore';
 import { Form, FormControl, FormGroup } from 'react-bootstrap';
+import MainButton from '../../components/Buttons/MainButton';
 import {Loader} from "../../components/Loader/Loader";
 import Context from './validationContext/validationContext';
 
@@ -59,6 +60,10 @@ class AddToDb extends React.Component {
             loading,
         } = this.state;
 
+        const isInvalid =
+            category === '' ||
+            price === '';
+
         if (loading) {
             return <Loader title={"Adding..."}/>
         } else {
@@ -67,7 +72,7 @@ class AddToDb extends React.Component {
                     <Form onSubmit={this.onSubmit}>
                         <FormGroup>
                             <FormControl
-                                required
+                                required="true"
                                 componentClass='select'
                                 value={category}
                                 onChange={event => this.setState(byPropKey('category', event.target.value))}
@@ -80,7 +85,6 @@ class AddToDb extends React.Component {
                         </FormGroup>
                         <FormGroup>
                             <FormControl
-                                required
                                 value={price}
                                 onChange={event => this.setState(byPropKey('price', event.target.value))}
                                 min='0'
@@ -99,8 +103,7 @@ class AddToDb extends React.Component {
                         {error && <p>{error.message}</p>}
                     </Form>
                     <hr/>
-
-                    <button type='submit' onClick={this.onSubmit}>Add</button>
+                    <MainButton type={"primary"} onClick={this.onSubmit} disabled={isInvalid} title={"Add"} size={"small"} />
                 </div>
             );
         }

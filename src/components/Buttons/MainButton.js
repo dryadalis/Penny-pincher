@@ -3,14 +3,21 @@ import c from 'classnames'
 import '../Buttons/button.css';
 
 
-export const TYPES = {
+export
+const TYPES = {
     PRIMARY: 'primary',
     SECONDARY: 'secondary',
     ADD: 'add',
     SIGNOUT: 'signOut',
 };
+const SIZES = {
+    LARGE: 'large',
+    MEDIUM: 'medium',
+    SMALL: 'small',
+};
 
-const MainButton = ({ title, onClick, type, disabled}) => (
+
+const MainButton = ({ title, onClick, type, disabled, size}) => (
     <button
         disabled={disabled}
         onClick={onClick}
@@ -26,6 +33,11 @@ const MainButton = ({ title, onClick, type, disabled}) => (
 
                     'signOut': type === TYPES.SIGNOUT,
 
+                    'large': size ===  SIZES.LARGE,
+
+                    'medium': size === SIZES.MEDIUM,
+
+                    'small': size === SIZES.SMALL,
 
                 },
             )

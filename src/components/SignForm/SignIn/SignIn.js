@@ -82,7 +82,7 @@ class SignInForm extends React.Component {
                     type={'password'}
                     placeholder={'Password'}
                 />
-                <MainButton disabled={isInvalid} type='secondary' onClick={this.onSubmit} title={'Sign In'} />
+                <MainButton disabled={isInvalid} type='secondary' onClick={this.onSubmit} title={'Sign In'} size={"medium"}/>
                 {error && <p>{error.message}</p>}
         </Form>
         )
