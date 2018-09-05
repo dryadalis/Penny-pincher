@@ -7,6 +7,7 @@ import { faTrashAlt, faPencilAlt} from '@fortawesome/free-solid-svg-icons';
 import HomePageWithoutData from './validationContext/NoDataComponent';
 import AddModal from '../../components/HomePage/AddModal';
 import {Loader} from "../../components/Loader/Loader";
+import Overview from '../../components/HomePage/Overview';
 
 class GetFromDb extends React.Component {
     constructor(props) {
@@ -54,6 +55,7 @@ class GetFromDb extends React.Component {
             return (
                 <div>
                     <ul className="getFromDb--list">
+                        <Overview />
                         {data.map((item, i) => (
                             <li key={i}
                                 className="getFromDb--item__wrapper"
@@ -68,7 +70,7 @@ class GetFromDb extends React.Component {
                                             .delete()
                                             .then(this.props.toggle())
                                     }><span title="Delete" aria-hidden="true">
-                                        <FontAwesomeIcon icon={faTrashAlt} />
+                                        <FontAwesomeIcon icon={faTrashAlt} className="icon__trash" />
                                     </span>
                                     </a>}
                                 </div>
