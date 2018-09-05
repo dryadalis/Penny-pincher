@@ -7,7 +7,6 @@ import { faTrashAlt, faPencilAlt} from '@fortawesome/free-solid-svg-icons';
 import HomePageWithoutData from './validationContext/NoDataComponent';
 import AddModal from '../../components/HomePage/AddModal';
 import {Loader} from "../../components/Loader/Loader";
-import SumAllExpenses from '../../components/HomePage/SumAllExpenses';
 
 class GetFromDb extends React.Component {
     constructor(props) {
@@ -55,7 +54,6 @@ class GetFromDb extends React.Component {
             return (
                 <div>
                     <ul className="getFromDb--list">
-                        <SumAllExpenses />
                         {data.map((item, i) => (
                             <li key={i}
                                 className="getFromDb--item__wrapper"
