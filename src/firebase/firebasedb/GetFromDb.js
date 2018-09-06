@@ -15,6 +15,7 @@ class GetFromDb extends React.Component {
         this.state = {
             data: [],
             sum: [],
+            newCategory: '',
             loading: false,
             error: null,
         };
@@ -28,7 +29,6 @@ class GetFromDb extends React.Component {
                 const data = querySnapshot.docs.map((doc) => doc.data());
                 this.setState({data});
                 this.setState({loading: false});
-
             })
             .catch((error) => this.setState({error}));
     }
@@ -45,9 +45,15 @@ class GetFromDb extends React.Component {
         }
 
     }
+    upDateCategory = (event) => {
+        this.setState({
+            newCategory: event.target.value
+        })
+    };
 
+    
     render() {
-        const {data, error, loading,} = this.state;
+        const {data, error, loading, newCategory} = this.state;
         if (loading ) {
             return <Loader title={"Loading..."} className={"loader--getFromDb"}/>
         } else if(data.length <= 0) {
@@ -80,7 +86,7 @@ class GetFromDb extends React.Component {
                                     <a onClick={() =>
                                         db.collection('receits')
                                             .doc(item.id)
-                                            .update({category: 'kiełbasa'})
+                                            .update({category: newCategory})
                                             .then(this.props.toggle())
                                     }> <FontAwesomeIcon icon={faPencilAlt}/> </a>
                                     }
@@ -89,6 +95,12 @@ class GetFromDb extends React.Component {
 
                         ))}
                     </ul>
+                    <input type='text'
+                           placeholder="new value"
+                            value={this.state.newCategory}
+                           onChange={event => this.upDateCategory(event)}
+                    />
+                    <button type='submit' >Edit</button>
                     <span className="getFromDb--addButton--wrapper" title="Add" >
                         <AddModal />
                     </span>
