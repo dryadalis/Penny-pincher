@@ -75,7 +75,14 @@ class GetFromDb extends React.Component {
                                     </a>}
                                 </div>
                                 <div className="getFromDb--item__note">
-                                    <FontAwesomeIcon icon={faPencilAlt}/> {item.note}
+                                    {item.id &&
+                                    <a onClick={() =>
+                                            db.collection('receits')
+                                                .doc(item.id)
+                                                .update({category: 'lody'})
+                                                .then(this.props.toggle())
+                                    }> <FontAwesomeIcon icon={faPencilAlt}/> </a>
+                                    }
                                 </div>
                             </li>
 
