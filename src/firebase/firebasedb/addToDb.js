@@ -24,6 +24,7 @@ class AddToDb extends React.Component {
         this.state={...INITIAL_STATE};
         this.onSubmit = this.onSubmit.bind(this);
     }
+
     onSubmit = (error) => {
         const {
             category,
@@ -43,6 +44,7 @@ class AddToDb extends React.Component {
                 this.setState({...INITIAL_STATE});
                 this.setState({loading: false});
                 this.props.toggle();
+                this.props.handleClose();
             })
             .catch(error => {
                 this.setState(byPropKey('error', error));

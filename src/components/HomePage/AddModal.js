@@ -10,21 +10,20 @@ class AddModal extends React.Component {
     constructor(props, context) {
         super(props, context);
 
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
-
         this.state = {
             show: false,
         };
     }
 
-    handleClose() {
+    handleClose = () => {
         this.setState({ show: false });
-    }
+    };
 
-    handleShow() {
-        this.setState({ show: true });
-    }
+    handleShow = () => {
+        this.setState({show: true});
+    };
+
+
 
     render() {
         return (
@@ -36,7 +35,7 @@ class AddModal extends React.Component {
                         <Modal.Title>Add transaction</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                       <AddToDb />
+                       <AddToDb handleClose={this.handleClose} />
                     </Modal.Body>
                 </Modal>
             </div>
