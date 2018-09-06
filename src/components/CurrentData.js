@@ -23,7 +23,6 @@ class CurrentData extends React.Component{
 
     render() {
         const {currentData} = this.state;
-        console.log(currentData);
         return (
             <div style={{fontSize: '11px', marginTop: '2%', marginRight: '2%'}}>{currentData}</div>
         );
