@@ -17,7 +17,7 @@ class GetFromDb extends React.Component {
             sum: [],
             loading: false,
             error: null,
-        }
+        };
     }
 
     componentDidMount() {
@@ -45,8 +45,9 @@ class GetFromDb extends React.Component {
         }
 
     }
+
     render() {
-        const {data, error, loading, } = this.state;
+        const {data, error, loading,} = this.state;
         if (loading ) {
             return <Loader title={"Loading..."} className={"loader--getFromDb"}/>
         } else if(data.length <= 0) {
@@ -66,9 +67,9 @@ class GetFromDb extends React.Component {
                                     {item.id &&
                                     <a onClick={() =>
                                         db.collection('receits')
-                                            .doc(item.id)
-                                            .delete()
-                                            .then(this.props.toggle())
+                                        .doc(item.id)
+                                        .delete()
+                                        .then(this.props.toggle())
                                     }><span title="Delete" aria-hidden="true">
                                         <FontAwesomeIcon icon={faTrashAlt} className="icon__trash" />
                                     </span>
@@ -77,10 +78,10 @@ class GetFromDb extends React.Component {
                                 <div className="getFromDb--item__note">
                                     {item.id &&
                                     <a onClick={() =>
-                                            db.collection('receits')
-                                                .doc(item.id)
-                                                .update({category: 'lody'})
-                                                .then(this.props.toggle())
+                                        db.collection('receits')
+                                            .doc(item.id)
+                                            .update({category: 'kiełbasa'})
+                                            .then(this.props.toggle())
                                     }> <FontAwesomeIcon icon={faPencilAlt}/> </a>
                                     }
                                 </div>
