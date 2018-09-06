@@ -23,9 +23,11 @@
 .secondary:hover {
     background-color:  #ff6600;
 }
-.secondary[disabled]:hover {
+.secondary[disabled]:hover , .primary[disabled]:hover {
     background-color: #ffa366;
     cursor: not-allowed;
+    color: white;
+    border-color: #ffa366;
 }
 .add {
     width: 85px;
