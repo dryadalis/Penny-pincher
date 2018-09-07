@@ -8,6 +8,7 @@ import HomePageWithoutData from './validationContext/NoDataComponent';
 import AddModal from '../../components/HomePage/AddModal';
 import {Loader} from "../../components/Loader/Loader";
 import Overview from '../../components/HomePage/Overview';
+import EditModal from "./EditModal";
 
 class GetFromDb extends React.Component {
     constructor(props) {
@@ -15,7 +16,6 @@ class GetFromDb extends React.Component {
         this.state = {
             data: [],
             sum: [],
-            newCategory: '',
             loading: false,
             error: null,
         };
@@ -45,15 +45,9 @@ class GetFromDb extends React.Component {
         }
 
     }
-    upDateCategory = (event) => {
-        this.setState({
-            newCategory: event.target.value
-        })
-    };
 
-    
     render() {
-        const {data, error, loading, newCategory} = this.state;
+        const {data, error, loading, } = this.state;
         if (loading ) {
             return <Loader title={"Loading..."} className={"loader--getFromDb"}/>
         } else if(data.length <= 0) {
@@ -83,23 +77,16 @@ class GetFromDb extends React.Component {
                                 </div>
                                 <div className="getFromDb--item__note">
                                     {item.id &&
-                                    <a onClick={() =>
-                                        db.collection('receits')
-                                            .doc(item.id)
-                                            .update({category: newCategory})
-                                            .then(this.props.toggle())
-                                    }> <FontAwesomeIcon icon={faPencilAlt}/> </a>
+                                        <EditModal
+                                            itemid={item.id}
+                                            itemcategory={item.category}
+                                        />
                                     }
                                 </div>
                             </li>
 
                         ))}
                     </ul>
-                    <input type='text'
-                           placeholder="new value"
-                            value={this.state.newCategory}
-                           onChange={event => this.upDateCategory(event)}
-                    />
                     <button type='submit' >Edit</button>
                     <span className="getFromDb--addButton--wrapper" title="Add" >
                         <AddModal />
