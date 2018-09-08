@@ -2,6 +2,9 @@ import React from 'react';
 import {db} from "../firebase";
 import MainButton from '../../components/Buttons/MainButton';
 import Context from '../firebasedb/validationContext/validationContext';
+import SelectCategoryInput from "./validationContext/SelectCategoryInput";
+import PriceInput from "./validationContext/PriceInput";
+import NoteInput from "./NoteInput";
 
 
 const byPropKey = (propertyName, value) => () => ({
@@ -35,15 +38,15 @@ class EditData extends React.Component {
         const { newCategory, newPrice, newNote } = this.state;
         return(
             <div>
-                <input type='text'
+                <SelectCategoryInput
+                        type='text'
                        value={newCategory}
                        onChange={event => this.setState(byPropKey('newCategory', event.target.value))} />
-                <input
-                    type="number"
+                <PriceInput
                     value={newPrice}
                     onChange={event => this.setState(byPropKey('newPrice', event.target.value))}
                 />
-                <input type="text"
+                <NoteInput
                         value={newNote}
                        onChange={event => this.setState(byPropKey('newNote', event.target.value))}
                     />

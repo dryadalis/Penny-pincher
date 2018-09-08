@@ -1,10 +1,8 @@
 import React from 'react';
 import {Modal} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faPencilAlt, faTrashAlt} from "@fortawesome/free-solid-svg-icons/index";
-import { db} from "../firebase";
+import {faPencilAlt,} from "@fortawesome/free-solid-svg-icons/index";
 import EditData from './EditData';
-
 
 class EditModal extends React.Component {
     constructor(props, context) {
