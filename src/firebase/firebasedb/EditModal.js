@@ -5,6 +5,7 @@ import {faPencilAlt, faTrashAlt} from "@fortawesome/free-solid-svg-icons/index";
 import { db} from "../firebase";
 import EditData from './EditData';
 
+
 class EditModal extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -38,7 +39,12 @@ class EditModal extends React.Component {
                         <Modal.Title>Edit</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                       <EditData itemid={this.props.itemid}  itemcategory={this.props.itemcategory} handleClose={this.handleClose}/>
+                       <EditData
+                           itemId={this.props.itemId}
+                           itemCategory={this.props.itemCategory}
+                           itemPrice={this.props.itemPrice}
+                           itemNote={this.props.itemNote}
+                           handleClose={this.handleClose}/>
                     </Modal.Body>
                 </Modal>
             </div>

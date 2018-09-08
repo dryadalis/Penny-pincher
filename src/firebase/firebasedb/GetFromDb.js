@@ -78,16 +78,18 @@ class GetFromDb extends React.Component {
                                 <div className="getFromDb--item__note">
                                     {item.id &&
                                         <EditModal
-                                            itemid={item.id}
-                                            itemcategory={item.category}
+                                            itemId={item.id}
+                                            itemCategory={item.category}
+                                            itemPrice={item.price}
+                                            itemNote={item.note}
                                         />
                                     }
+                                    <div style={{marginLeft: '2%'}}>{item.note} </div>
                                 </div>
                             </li>
 
                         ))}
                     </ul>
-                    <button type='submit' >Edit</button>
                     <span className="getFromDb--addButton--wrapper" title="Add" >
                         <AddModal />
                     </span>
