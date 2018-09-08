@@ -1,11 +1,7 @@
-.navbar {
+.menu--white {
     display: flex;
-    flex-direction: row;
-    justify-content: baseline;
+    height: 60px;
     background-color: white;
-}
-.navbar--brand {
-    margin-top: 8%;
 }
 #logIn {
     text-align: center;

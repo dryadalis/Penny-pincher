@@ -1,10 +1,8 @@
 import React from 'react';
 import {
     Grid,
-    Row,
-    Col,
     Image,
-} from 'react-bootstrap'
+} from 'semantic-ui-react'
 
 import './Landing.css';
 import { RedirectionButton} from "../Buttons/RedirectionButton";
@@ -14,8 +12,8 @@ import MainButton from "../Buttons/MainButton";
 
 const LandingPage = () =>
     <Grid className="landingPage">
-        <Row>
-            <Col xs={12} md={6} className="landingPage--text">
+        <Grid.Row>
+            <Grid.Column width={8} className="landingPage--text">
                 <h1 className='landingPage--text__header'>penny-pincher</h1>
                 <p className='landingPage--text__para'>Because money matters.</p>
                 <AuthUserContext.Consumer>
@@ -33,11 +31,11 @@ const LandingPage = () =>
                         />
                     }
                 </AuthUserContext.Consumer>
-            </Col>
-            <Col xs={12} md={6} className="landingPage--image">
+            </Grid.Column>
+            <Grid.Column width={8} className="landingPage--image">
                 <Image src={img} responsive style={{ marginTop: '80px', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: 'auto'}}/>
-            </Col>
-        </Row>
-    </Grid>
+            </Grid.Column>
+        </Grid.Row>
+    </Grid>;
 
 export default LandingPage;
