@@ -4,6 +4,7 @@ import { FormGroup, FormControl} from 'react-bootstrap';
 const PriceInput = ({value, onChange, placeholder}) => (
         <FormGroup>
             <FormControl
+                class="form-control"
                 value={value}
                 onChange={onChange}
                 placeholder={placeholder}

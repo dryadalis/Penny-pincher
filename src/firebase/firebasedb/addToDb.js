@@ -87,9 +87,9 @@ class AddToDb extends React.Component {
                                 onChange={event => this.setState(byPropKey('note', event.target.value))}
                                 placeholder='Note'
                             />
-                        {error && <p>{error.message}</p>}
                     </Form>
                     <hr/>
+                    {error && <p>{error.message}</p>}
                     <MainButton type={"primary"} onClick={this.onSubmit} disabled={isInvalid} title={"Add"} size={"small"} />
                 </div>
             );
