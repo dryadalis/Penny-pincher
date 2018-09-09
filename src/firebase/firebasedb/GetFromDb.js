@@ -22,26 +22,28 @@ class GetFromDb extends React.Component {
 
     componentDidMount() {
         this.setState({loading: true});
-        db.collection('receits')
-            .get()
-            .then((querySnapshot) => {
+
+        let first = db.collection('receits').orderBy("addedAt").limit(4);
+
+        return first.get()
+                .then((querySnapshot) => {
                 const data = querySnapshot.docs.map((doc) => doc.data());
                 this.setState({data});
-                this.setState({loading: false});
-
+                this.setState({loading: false})
             })
             .catch((error) => this.setState({error}));
     }
     componentDidUpdate(prevProps){
         if(this.props.isInvalid !== prevProps.isInvalid && this.props.isInvalid) {
-            db.collection('receits')
-                .get()
-                .then((querySnapshot) => {
-                    const data = querySnapshot.docs.map((doc) => doc.data());
-                    this.setState({data});
-                    this.props.toggle();
-                })
-                .catch((error) => this.setState({error}));
+            let first = db.collection('receits').orderBy("addedAt").limit(4);
+
+            return first.get()
+                        .then((querySnapshot) => {
+                            const data = querySnapshot.docs.map((doc) => doc.data());
+                            this.setState({data});
+                            this.props.toggle();
+                        })
+                        .catch((error) => this.setState({error}));
         }
 
     }

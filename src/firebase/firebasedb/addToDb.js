@@ -34,11 +34,13 @@ class AddToDb extends React.Component {
         this.setState({loading: true});
         const newSuggestionReference = db.collection('receits').doc();
 
+
         newSuggestionReference.set({
             category: category,
             price: price,
             note: note,
-            id: newSuggestionReference.id
+            id: newSuggestionReference.id,
+            addedAt: new Date().getTime() * -1,
         })
             .then(() => {
                 this.setState({...INITIAL_STATE});
