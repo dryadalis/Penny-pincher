@@ -15,6 +15,7 @@ class GetFromDb extends React.Component {
         this.state = {
             data: [],
             sum: [],
+            limit: 1,
             loading: false,
             error: null,
         }
@@ -23,7 +24,7 @@ class GetFromDb extends React.Component {
     componentDidMount() {
         this.setState({loading: true});
 
-        let first = db.collection('receits').orderBy("addedAt").limit(4);
+        let first = db.collection('receits').orderBy("addedAt").limit(this.state.limit);
 
         return first.get()
                 .then((querySnapshot) => {
@@ -31,12 +32,13 @@ class GetFromDb extends React.Component {
                 this.setState({data});
                 this.setState({loading: false})
             })
+
             .catch((error) => this.setState({error}));
     }
-    componentDidUpdate(prevProps){
-        if(this.props.isInvalid !== prevProps.isInvalid && this.props.isInvalid) {
-            let first = db.collection('receits').orderBy("addedAt").limit(4);
-
+    componentDidUpdate(prevProps, prevState){
+        if(((this.props.isInvalid !== prevProps.isInvalid) && this.props.isInvalid || prevState.limit)) {
+            let first = db.collection('receits').orderBy("addedAt").limit(this.state.limit);
+console.log('XD')
             return first.get()
                         .then((querySnapshot) => {
                             const data = querySnapshot.docs.map((doc) => doc.data());
@@ -47,6 +49,11 @@ class GetFromDb extends React.Component {
         }
 
     }
+
+    showMore = () => {
+        this.setState(prevState => ({limit: prevState.limit + 1}))
+    };
+
     render() {
         const {data, error, loading, } = this.state;
         if (loading ) {
@@ -86,6 +93,7 @@ class GetFromDb extends React.Component {
                     <span className="getFromDb--addButton--wrapper" title="Add" >
                         <AddModal />
                     </span>
+                    <button type="submit" onClick={this.showMore}>Show more</button>
                     {error && <p>{error.message}</p>}
                 </div>
             )

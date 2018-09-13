@@ -27,7 +27,7 @@ class SumAllExpenses extends React.Component {
                 .then((querySnapshot) => {
                     const data = querySnapshot.docs.map((doc) => doc.data());
                     this.convertToNumberAndSum(data);
-                    this.props.toggle();
+                    //this.props.toggle();
                 })
                 .catch((error) => this.setState({error}));
         }
