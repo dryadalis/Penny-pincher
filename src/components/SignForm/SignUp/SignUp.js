@@ -16,6 +16,8 @@ import MainForm from "../MainSignForm/MainForm";
 import { MainImage } from '../MainImage/MainImage';
 import MainInput from '../MainInput/MainInput';
 import MainButton from "../../Buttons/MainButton";
+import {db} from "../../../firebase/firebase";
+import firebase from 'firebase';
 
 const SignUpPage = ({history}) =>
     <Grid>
@@ -55,14 +57,14 @@ class SignUpForm extends Component{
         } = this.props;
 
         auth.doCreateUserWithEmailAndPassword(email, passwordOne)
-            .then(authUser => {
+            .then((authUser) => {
+
                 this.setState({...INITIAL_STATE});
-                history.push(routes.HOME);
+                history.push(routes.HOME)
             })
             .catch(error => {
                 this.setState(byPropKey('error', error));
             });
-
         event.preventDefault();
     };
     render() {

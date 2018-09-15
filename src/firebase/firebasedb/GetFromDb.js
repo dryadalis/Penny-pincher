@@ -1,5 +1,5 @@
 import React from 'react';
-import { db } from '../firebase';
+import { db, auth } from '../firebase';
 import './getFromDb.css';
 import Context from '../firebasedb/validationContext/validationContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +8,8 @@ import HomePageWithoutData from './validationContext/NoDataComponent';
 import AddModal from '../../components/HomePage/AddModal';
 import {Loader} from "../../components/Loader/Loader";
 import Overview from '../../components/HomePage/Overview';
+
+
 
 class GetFromDb extends React.Component {
     constructor(props) {
@@ -20,21 +22,25 @@ class GetFromDb extends React.Component {
         }
     }
 
+
     componentDidMount() {
         this.setState({loading: true});
-        db.collection('receits')
+        const currentUser = auth.currentUser.uid;
+        db.collection(currentUser)
             .get()
             .then((querySnapshot) => {
                 const data = querySnapshot.docs.map((doc) => doc.data());
                 this.setState({data});
-                this.setState({loading: false});
-
-            })
-            .catch((error) => this.setState({error}));
+                this.setState({loading: false})
+                }
+            )
+            .catch((error) => this.setState({error}))
     }
+
     componentDidUpdate(prevProps){
         if(this.props.isInvalid !== prevProps.isInvalid && this.props.isInvalid) {
-            db.collection('receits')
+            const currentUser = auth.currentUser.uid;
+            db.collection(currentUser)
                 .get()
                 .then((querySnapshot) => {
                     const data = querySnapshot.docs.map((doc) => doc.data());

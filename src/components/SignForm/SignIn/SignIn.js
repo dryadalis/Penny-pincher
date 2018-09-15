@@ -49,7 +49,7 @@ class SignInForm extends React.Component {
             history,
         } = this.props;
         auth.doSignInWithEmailAndPassword(email, password)
-            .then(() => {
+            .then((authUser) => {
                 this.setState({...INITIAL_STATE});
                 history.push(routes.HOME);
             })

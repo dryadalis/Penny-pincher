@@ -1,5 +1,5 @@
 import React from 'react';
-import { db } from '../firebase';
+import {auth, db} from '../firebase';
 import 'firebase/firestore';
 import { Form, FormControl, FormGroup } from 'react-bootstrap';
 import MainButton from '../../components/Buttons/MainButton';
@@ -32,7 +32,8 @@ class AddToDb extends React.Component {
             note,
         } = this.state;
         this.setState({loading: true});
-        const newSuggestionReference = db.collection('receits').doc();
+        const currentUser = auth.currentUser.uid;
+        const newSuggestionReference = db.collection(currentUser).doc();
 
         newSuggestionReference.set({
             category: category,
