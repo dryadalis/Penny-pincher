@@ -38,7 +38,7 @@ class GetFromDb extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        if(this.props.isInvalid !== prevProps.isInvalid && this.props.isInvalid) {
+        if(this.props.isInvalid !== prevProps.isInvalid && this.props.isInvalid)  {
             const currentUser = auth.currentUser.uid;
             db.collection(currentUser)
                 .get()
