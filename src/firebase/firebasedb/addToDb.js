@@ -1,7 +1,7 @@
 import React from 'react';
 import {auth, db} from '../firebase';
 import 'firebase/firestore';
-import { Form, FormControl, FormGroup } from 'react-bootstrap';
+import { Form,} from 'react-bootstrap';
 import MainButton from '../../components/Buttons/MainButton';
 import {Loader} from "../../components/Loader/Loader";
 import Context from './validationContext/validationContext';
@@ -42,7 +42,7 @@ class AddToDb extends React.Component {
             category: category,
             price: price,
             note: note,
-            id: newSuggestionReference.id
+            id: newSuggestionReference.id,
         })
             .then(() => {
                 this.setState({...INITIAL_STATE});

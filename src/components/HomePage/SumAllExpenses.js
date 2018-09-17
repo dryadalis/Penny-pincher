@@ -1,5 +1,5 @@
 import React from 'react';
-import {db} from "../../firebase/firebase";
+import {db, auth} from "../../firebase/firebase";
 import Context from '../../firebase/firebasedb/validationContext/validationContext';
 
 
@@ -12,7 +12,7 @@ class SumAllExpenses extends React.Component {
         }
     }
     componentDidMount() {
-        db.collection('receits')
+        db.collection(auth.currentUser.uid)
             .get()
             .then((querySnapshot) => {
                 const data = querySnapshot.docs.map((doc) => doc.data());
@@ -22,7 +22,7 @@ class SumAllExpenses extends React.Component {
     }
     componentDidUpdate(prevProps){
         if(this.props.isInvalid !== prevProps.isInvalid && this.props.isInvalid) {
-            db.collection('receits')
+            db.collection(auth.currentUser.uid)
                 .get()
                 .then((querySnapshot) => {
                     const data = querySnapshot.docs.map((doc) => doc.data());
@@ -52,7 +52,7 @@ class SumAllExpenses extends React.Component {
                 </p>
                 <p style={{color: 'red', margin: '15px'}}>
                     {sum} ZŁ
-                    </p>
+                </p>
             </div>
         );
     }
