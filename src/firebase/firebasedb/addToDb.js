@@ -56,6 +56,12 @@ class AddToDb extends React.Component {
         error.preventDefault();
 
     };
+    handleChange = (event) => {
+
+        let userInput = event.target.value.toString().split(".").map((el,i)=>i?el.split("").slice(0,2).join(""):el).join(".");
+        this.setState({price: userInput})
+    }
+
 
     render(){
         const {
@@ -69,7 +75,7 @@ class AddToDb extends React.Component {
         const isInvalid =
             category === '' ||
             price === '';
-
+``
         if (loading) {
             return <Loader title={"Adding..."}/>
         } else {
@@ -82,7 +88,7 @@ class AddToDb extends React.Component {
                             />
                         <PriceInput
                             value={price}
-                            onChange={event => this.setState(byPropKey('price', event.target.value))}
+                            onChange={this.handleChange}
                             placeholder="Price"
                         />
                             <NoteInput

@@ -63,7 +63,7 @@ class GetFromDb extends React.Component {
                             >
                                 <div className="getFromDb--item">
                                     <div className="getFromDb--item__category"> {item.category} </div>
-                                    <div className="getFromDb--item__price"> {item.price} zł</div>
+                                    <div className="getFromDb--item__price"> {parseFloat(item.price).toFixed(2)} zł</div>
                                     {item.id &&
                                     <a onClick={() =>
                                         db.collection(auth.currentUser.uid)
