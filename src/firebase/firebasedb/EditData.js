@@ -1,5 +1,5 @@
 import React from 'react';
-import {db} from "../firebase";
+import {auth, db} from "../firebase";
 import MainButton from '../../components/Buttons/MainButton';
 import Context from '../firebasedb/validationContext/validationContext';
 import SelectCategoryInput from "./validationContext/SelectCategoryInput";
@@ -22,7 +22,7 @@ class EditData extends React.Component {
     }
 
     onSubmit = () => {
-        db.collection('receits')
+        db.collection(auth.currentUser.uid)
             .doc(this.props.itemId)
             .update({
                 category: this.state.newCategory,

@@ -23,8 +23,7 @@ class GetFromDb extends React.Component {
 
     componentDidMount() {
         this.setState({loading: true});
-        const currentUser = auth.currentUser.uid;
-        db.collection(currentUser)
+        db.collection(auth.currentUser.uid)
             .get()
             .then((querySnapshot) => {
                 const data = querySnapshot.docs.map((doc) => doc.data());
@@ -35,8 +34,7 @@ class GetFromDb extends React.Component {
     }
     componentDidUpdate(prevProps){
         if(this.props.isInvalid !== prevProps.isInvalid && this.props.isInvalid)  {
-            const currentUser = auth.currentUser.uid;
-            db.collection(currentUser)
+            db.collection(auth.currentUser.uid)
                 .get()
                 .then((querySnapshot) => {
                     const data = querySnapshot.docs.map((doc) => doc.data());
@@ -68,7 +66,7 @@ class GetFromDb extends React.Component {
                                     <div className="getFromDb--item__price"> {item.price} zł</div>
                                     {item.id &&
                                     <a onClick={() =>
-                                        db.collection('receits')
+                                        db.collection(auth.currentUser.uid)
                                         .doc(item.id)
                                         .delete()
                                         .then(this.props.toggle())
