@@ -2,8 +2,7 @@ import React from 'react';
 import {FormControl, FormGroup} from 'react-bootstrap';
 import './MainInput.css';
 
-const MainInput = ({value, onChange, type, placeholder, }) => (
-   <FormGroup>
+const MainInput = ({value, onChange, type, placeholder,}) => (
         <FormControl
             className="sign--input"
             value={value}
@@ -11,8 +10,6 @@ const MainInput = ({value, onChange, type, placeholder, }) => (
             type={type}
             placeholder={placeholder}
         />
-   </FormGroup>
-
 );
 
 

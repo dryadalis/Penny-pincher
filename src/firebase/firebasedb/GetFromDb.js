@@ -8,8 +8,7 @@ import HomePageWithoutData from './validationContext/NoDataComponent';
 import AddModal from '../../components/HomePage/AddModal';
 import {Loader} from "../../components/Loader/Loader";
 import Overview from '../../components/HomePage/Overview';
-
-
+import EditModal from "./EditModal";
 
 class GetFromDb extends React.Component {
     constructor(props) {
@@ -19,9 +18,8 @@ class GetFromDb extends React.Component {
             sum: [],
             loading: false,
             error: null,
-        }
+        };
     }
-
 
     componentDidMount() {
         this.setState({loading: true});
@@ -31,12 +29,10 @@ class GetFromDb extends React.Component {
             .then((querySnapshot) => {
                 const data = querySnapshot.docs.map((doc) => doc.data());
                 this.setState({data});
-                this.setState({loading: false})
-                }
-            )
-            .catch((error) => this.setState({error}))
+                this.setState({loading: false});
+            })
+            .catch((error) => this.setState({error}));
     }
-
     componentDidUpdate(prevProps){
         if(this.props.isInvalid !== prevProps.isInvalid && this.props.isInvalid)  {
             const currentUser = auth.currentUser.uid;
@@ -51,6 +47,7 @@ class GetFromDb extends React.Component {
         }
 
     }
+
     render() {
         const {data, error, loading, } = this.state;
         if (loading ) {
@@ -72,16 +69,24 @@ class GetFromDb extends React.Component {
                                     {item.id &&
                                     <a onClick={() =>
                                         db.collection('receits')
-                                            .doc(item.id)
-                                            .delete()
-                                            .then(this.props.toggle())
+                                        .doc(item.id)
+                                        .delete()
+                                        .then(this.props.toggle())
                                     }><span title="Delete" aria-hidden="true">
                                         <FontAwesomeIcon icon={faTrashAlt} className="icon__trash" />
                                     </span>
                                     </a>}
                                 </div>
                                 <div className="getFromDb--item__note">
-                                    <FontAwesomeIcon icon={faPencilAlt}/> {item.note}
+                                    {item.id &&
+                                        <EditModal
+                                            itemId={item.id}
+                                            itemCategory={item.category}
+                                            itemPrice={item.price}
+                                            itemNote={item.note}
+                                        />
+                                    }
+                                    <div style={{marginLeft: '2%'}}>{item.note} </div>
                                 </div>
                             </li>
 

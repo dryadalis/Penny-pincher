@@ -5,7 +5,7 @@ import { SignUpLink } from '../SignUp/SignUp';
 import { auth } from '../../../firebase/index';
 import * as routes from '../../../constants/routes';
 import { PasswordForgetLink} from "../../PasswordForget";
-import {Grid, Row } from 'react-bootstrap';
+import {Grid, Row,} from 'react-bootstrap';
 import { MainImage } from "../MainImage/MainImage";
 import MainForm from "../MainSignForm/MainForm";
 import MainInput from '../MainInput/MainInput';
@@ -58,6 +58,13 @@ class SignInForm extends React.Component {
             });
         event.preventDefault();
     };
+
+    getValidationState = () => {
+        const length = this.state.email.length;
+        if(length > 10) return 'success';
+        else if (length > 5 ) return 'warning';
+        else if (length > 0 ) return 'error';
+    }
 
     render() {
         const {

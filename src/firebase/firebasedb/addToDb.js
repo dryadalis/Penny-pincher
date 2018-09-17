@@ -5,6 +5,9 @@ import { Form, FormControl, FormGroup } from 'react-bootstrap';
 import MainButton from '../../components/Buttons/MainButton';
 import {Loader} from "../../components/Loader/Loader";
 import Context from './validationContext/validationContext';
+import SelectCategoryInput from "./validationContext/SelectCategoryInput";
+import PriceInput from "./validationContext/PriceInput";
+import NoteInput from "./NoteInput";
 
 const byPropKey = (propertyName, value) => () => ({
     [propertyName]: value,
@@ -73,39 +76,23 @@ class AddToDb extends React.Component {
             return (
                 <div>
                     <Form onSubmit={this.onSubmit}>
-                        <FormGroup>
-                            <FormControl
-                                required="true"
-                                componentClass='select'
+                        <SelectCategoryInput
                                 value={category}
                                 onChange={event => this.setState(byPropKey('category', event.target.value))}
-                            >
-                                <option value="" defaultValue disabled>Select category</option>
-                                <option value="clothes">Clothes</option>
-                                <option value="fuel">Fuel</option>
-                                <option value="food">Food</option>
-                            </FormControl>
-                        </FormGroup>
-                        <FormGroup>
-                            <FormControl
-                                value={price}
-                                onChange={event => this.setState(byPropKey('price', event.target.value))}
-                                min='0'
-                                type='number'
-                                placeholder='Price'
                             />
-                        </FormGroup>
-                        <FormGroup>
-                            <FormControl
+                        <PriceInput
+                            value={price}
+                            onChange={event => this.setState(byPropKey('price', event.target.value))}
+                            placeholder="Price"
+                        />
+                            <NoteInput
                                 value={note}
                                 onChange={event => this.setState(byPropKey('note', event.target.value))}
-                                type='text'
                                 placeholder='Note'
                             />
-                        </FormGroup>
-                        {error && <p>{error.message}</p>}
                     </Form>
                     <hr/>
+                    {error && <p>{error.message}</p>}
                     <MainButton type={"primary"} onClick={this.onSubmit} disabled={isInvalid} title={"Add"} size={"small"} />
                 </div>
             );

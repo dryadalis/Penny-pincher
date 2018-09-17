@@ -29,6 +29,8 @@
     color: red;
 }
 .getFromDb--item__note {
+    display: flex;
+    flex-direction: row;
     font-size: 10px;
     text-transform: lowercase;
     color: gray;
