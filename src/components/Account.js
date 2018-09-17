@@ -13,8 +13,8 @@ const AccountPage = () =>
                 <PasswordForgetForm />
                 <PasswordChangeForm />
             </div>
-        }
-    </AuthUserContext.Consumer>;
-    const authCondition = (authUser) => !!authUser;
+}
+</AuthUserContext.Consumer>;
+const authCondition = (authUser) => !!authUser;
 
 export default withAuthorization(authCondition)(AccountPage);
