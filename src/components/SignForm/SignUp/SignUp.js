@@ -8,7 +8,6 @@ import {Grid,
     Form,
     Checkbox,
 } from 'react-bootstrap';
-
 import { auth } from '../../../firebase/index';
 import * as routes from '../../../constants/routes';
 import './SignUp.css'
@@ -16,13 +15,12 @@ import MainForm from "../MainSignForm/MainForm";
 import { MainImage } from '../MainImage/MainImage';
 import MainInput from '../MainInput/MainInput';
 import MainButton from "../../Buttons/MainButton";
-import {db} from "../../../firebase/firebase";
-import firebase from 'firebase';
+import mainImg from '../../images/rawpixel-570908-unsplash.jpg';
 
 const SignUpPage = ({history}) =>
     <Grid>
         <Row>
-            <MainImage />
+            <MainImage src={mainImg}/>
             <MainForm title={"Sign Up"}>
                 <SignUpForm history={history}/>
             </MainForm>

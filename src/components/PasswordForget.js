@@ -1,13 +1,25 @@
 import  React from 'react';
 import { Link } from 'react-router-dom';
-
 import { auth }from '../firebase';
+import {Grid, Row, Col } from 'react-bootstrap';
+import './passwordForget.css';
+import MainButton from "./Buttons/MainButton";
+import MainInput from "./SignForm/MainInput/MainInput";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock} from '@fortawesome/free-solid-svg-icons';
+
 
 const PasswordForgetPage = () =>
-    <div>
-        <h1>Password Forget</h1>
-        <PasswordForgetForm />
-    </div>
+   <Grid >
+       <Row className="passwordForget">
+           <Col xs={12} md={8} className="passwordForget--wrapper">
+                <FontAwesomeIcon icon={faLock} size='4x' className="passwordForget--icon"/>
+               <h2>Forgot Password?</h2>
+                <p>Enter the email address you used to register, and we will send you an email to recover your password.</p>
+               <PasswordForgetForm />
+           </Col>
+       </Row>
+   </Grid>
 
 const byPropKey = (propertyName, value) => () => ({
    [propertyName]: value,
@@ -44,16 +56,14 @@ class PasswordForgetForm extends React.Component {
 
       const isInvalid = email === '';
       return(
-          <form onSubmit={this.onSubmit}>
-              <input
+          <form onSubmit={this.onSubmit} className="passwordForget--form">
+              <MainInput
                   value={this.state.email}
                   onChange={event => this.setState(byPropKey('email', event.target.value))}
                   type='text'
                   placeholder='Email Address'
               />
-              <button disabled={isInvalid} type='submit'>
-                  Reset My Password
-              </button>
+              <MainButton disabled={isInvalid} type='secondary' onClick={this.onSubmit} title={'Reset My Password'} size={"medium"}/>
               {error && <p>{error.message}</p> }
           </form>
       );

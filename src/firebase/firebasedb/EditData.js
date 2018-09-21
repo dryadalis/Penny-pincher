@@ -33,6 +33,13 @@ class EditData extends React.Component {
             .then(this.props.handleClose())
     };
 
+    handleChange = (event) => {
+
+        let userInput = event.target.value.toString().split(".").map((el,i)=>i?el.split("").slice(0,2).join(""):el).join(".");
+        this.setState({price: userInput})
+    }
+
+
 
     render() {
         const { newCategory, newPrice, newNote } = this.state;
@@ -44,7 +51,7 @@ class EditData extends React.Component {
                        onChange={event => this.setState(byPropKey('newCategory', event.target.value))} />
                 <PriceInput
                     value={newPrice}
-                    onChange={event => this.setState(byPropKey('newPrice', event.target.value))}
+                    onChange={this.handleChange}
                 />
                 <NoteInput
                         value={newNote}

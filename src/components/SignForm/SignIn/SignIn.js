@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from  'react-router-dom';
-
 import { SignUpLink } from '../SignUp/SignUp';
 import { auth } from '../../../firebase/index';
 import * as routes from '../../../constants/routes';
@@ -11,11 +10,12 @@ import MainForm from "../MainSignForm/MainForm";
 import MainInput from '../MainInput/MainInput';
 import { Form } from 'react-bootstrap';
 import MainButton from '../../Buttons/MainButton'
+import mainImg from '../../images/rawpixel-570908-unsplash.jpg';
 
 const SignInPage = ({history}) =>
     <Grid style={{width:'100%'}}>
         <Row>
-                <MainImage />
+                <MainImage src={mainImg}/>
                 <MainForm title={"Sign In"}>
                     <SignInForm history={history} />
                     <PasswordForgetLink />
@@ -49,7 +49,7 @@ class SignInForm extends React.Component {
             history,
         } = this.props;
         auth.doSignInWithEmailAndPassword(email, password)
-            .then((authUser) => {
+            .then(() => {
                 this.setState({...INITIAL_STATE});
                 history.push(routes.HOME);
             })
@@ -58,13 +58,6 @@ class SignInForm extends React.Component {
             });
         event.preventDefault();
     };
-
-    getValidationState = () => {
-        const length = this.state.email.length;
-        if(length > 10) return 'success';
-        else if (length > 5 ) return 'warning';
-        else if (length > 0 ) return 'error';
-    }
 
     render() {
         const {
@@ -75,6 +68,7 @@ class SignInForm extends React.Component {
         const isInvalid =
             password === '' ||
             email === '';
+
         return (
             <Form onSubmit={this.onSubmit}  className='sign--form'>
                 <MainInput
