@@ -5,9 +5,9 @@ import Context from '../firebasedb/validationContext/validationContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import HomePageWithoutData from './validationContext/NoDataComponent';
-import AddModal from '../../components/HomePage/AddModal';
+import AddModal from '../../components/HomePage/AddModal/AddModal';
 import {Loader} from "../../components/Loader/Loader";
-import Overview from '../../components/HomePage/Overview';
+import Overview from '../../components/HomePage/Overview/Overview';
 import EditModal from "./EditModal";
 
 class GetFromDb extends React.Component {
