@@ -79,3 +79,9 @@
     background-color: white;
     color: #ff751a;
 }
+@media (max-width: 1080px) {
+    .secondary {
+        margin-top: 2%;
+    }
+}
+

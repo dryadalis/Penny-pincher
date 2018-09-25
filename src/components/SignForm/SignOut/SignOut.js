@@ -12,7 +12,7 @@ const SignOutButton = withRouter(({ history }) => (
             history.push(routes.LANDING);
             auth.doSignOut();
         }}
-        title={ <FontAwesomeIcon icon={faSignOutAlt} />}
+        title={ <FontAwesomeIcon icon={faSignOutAlt} /> }
         type='signOut'
     />
 ));

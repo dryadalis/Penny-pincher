@@ -1,5 +1,5 @@
 import React from 'react';
-import {FormControl, FormGroup} from 'react-bootstrap';
+import {FormControl,} from 'react-bootstrap';
 import './MainInput.css';
 
 const MainInput = ({value, onChange, type, placeholder,}) => (
