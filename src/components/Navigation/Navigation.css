@@ -1,7 +1,6 @@
 .navbar {
     display: flex;
     flex-direction: row;
-    justify-content: baseline;
     background-color: white;
 }
 .navbar--brand {
@@ -30,4 +29,38 @@
     color: white;
     background-color: #ff751a;
     transition: all 1s ease;
+}
+
+.navbar--signOut {
+    display: none !important;
+}
+.navbar--signOut a {
+
+    color: #ff6600 !important;
+    font-weight: bold;
+}
+
+@media (max-width: 765px) {
+    .navbar--brand {
+        margin: 0;
+    }
+    .navbar-default .navbar-toggle {
+        border: none;
+        cursor: pointer;
+    }
+    .navbar-collapse ul {
+        flex-direction: column;
+    }
+    .navbar--signOutButton {
+        display: none !important;
+    }
+    .navbar--signOut {
+        display: block !important;
+    }
+    .container>.navbar--collapse, .container>.navbar-header {
+        height: 62px;
+    }
+    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+        background-color: transparent;
+    }
 }

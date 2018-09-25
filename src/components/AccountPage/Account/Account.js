@@ -1,7 +1,7 @@
 import React from 'react';
-import AuthUserContext from '../AuthUserContext';
-import withAuthorization from "../withAuthorization";
-import PasswordChangeModal from "./PasswordChange/PasswordChangeModal/PasswordChangeModal";
+import AuthUserContext from '../../../firebase/firebasedb/auth/AuthUserContext';
+import withAuthorization from "../../../firebase/firebasedb/auth/withAuthorization";
+import PasswordChangeModal from "../PasswordChange/PasswordChangeModal/PasswordChangeModal";
 import './account.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUserCog} from "@fortawesome/free-solid-svg-icons";

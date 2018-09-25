@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import MainButton from "./Buttons/MainButton";
+import MainButton from "./MainButton";
 
 
 const RedirectionButton = withRouter(({ title, route, history, className, }) => (

@@ -1,6 +1,6 @@
 import React from 'react';
-import {db, auth} from "../../firebase/firebase";
-import Context from '../../firebase/firebasedb/validationContext/validationContext';
+import {db, auth} from "../../../firebase/firebase";
+import Context from '../../../firebase/firebasedb/validationContext/validationContext';
 
 
 class SumAllExpenses extends React.Component {

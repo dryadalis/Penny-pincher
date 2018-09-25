@@ -1,10 +1,10 @@
 import React from 'react';
 import {Modal} from 'react-bootstrap';
-import MainButton from '../../Buttons/MainButton'
+import MainButton from '../../../Buttons/MainButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import './addmodal.css';
-import AddToDb from '../../../firebase/firebasedb/addToDb';
+import AddToDb from '../addToDb';
 
 class AddModal extends React.Component {
     constructor(props, context) {

@@ -7,9 +7,9 @@ import {
 } from 'react-bootstrap'
 
 import './Landing.css';
-import { RedirectionButton} from "../RedirectionButton";
+import { RedirectionButton} from "../Buttons/RedirectionButton";
 import img from '../images/imageedit_6_2261919941.png';
-import AuthUserContext from '../AuthUserContext';
+import AuthUserContext from '../../firebase/firebasedb/auth/AuthUserContext';
 import MainButton from "../Buttons/MainButton";
 
 const LandingPage = () =>

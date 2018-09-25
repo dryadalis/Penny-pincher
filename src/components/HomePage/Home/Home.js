@@ -1,8 +1,8 @@
 import React from 'react';
 import './home.css';
 import { Grid, Row, Col } from 'react-bootstrap';
-import GetFromDb from '../../firebase/firebasedb/GetFromDb';
-import withAuthorization from '../withAuthorization';
+import GetFromDb from '../ExpenseList/GetFromDb';
+import withAuthorization from '../../../firebase/firebasedb/auth/withAuthorization';
 
 
 const HomePage = () =>

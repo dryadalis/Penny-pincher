@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { auth }from '../../firebase/index';
 import {Grid, Row, Col, } from 'react-bootstrap';
 import './passwordForget.css';
-import MainButton from "./Buttons/MainButton";
-import MainInput from "./SignForm/MainInput/MainInput";
+import MainButton from "../Buttons/MainButton";
+import MainInput from "../SignForm/MainInput/MainInput";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock} from '@fortawesome/free-solid-svg-icons';
 

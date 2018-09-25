@@ -1,13 +1,13 @@
 import React from 'react';
-import {auth, db} from '../firebase';
+import {auth, db} from '../../../firebase/firebase';
 import 'firebase/firestore';
 import { Form,} from 'react-bootstrap';
-import MainButton from '../../components/Buttons/MainButton';
-import {Loader} from "../../components/Loader/Loader";
-import Context from './validationContext/validationContext';
-import SelectCategoryInput from "./validationContext/SelectCategoryInput";
-import PriceInput from "../../components/Inputs/PriceInput";
-import NoteInput from "../../components/Inputs/NoteInput";
+import MainButton from '../../Buttons/MainButton';
+import {Loader} from "../../Loader/Loader";
+import Context from '../../../firebase/firebasedb/validationContext/validationContext';
+import SelectCategoryInput from "../../Inputs/SelectCategoryInput";
+import PriceInput from "../../Inputs/PriceInput";
+import NoteInput from "../../Inputs/NoteInput";
 
 const byPropKey = (propertyName, value) => () => ({
     [propertyName]: value,

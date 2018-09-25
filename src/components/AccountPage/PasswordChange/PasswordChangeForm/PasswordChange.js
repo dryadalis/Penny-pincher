@@ -1,9 +1,9 @@
 import React from 'react';
-import { auth } from "../firebase";
+import { auth } from "../../../../firebase/index";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye , faEyeSlash} from '@fortawesome/free-solid-svg-icons';
-import MainButton from '../components/Buttons/MainButton';
-import MainInput from "./SignForm/MainInput/MainInput";
+import MainButton from '../../../Buttons/MainButton';
+import MainInput from "../../../SignForm/MainInput/MainInput";
 import {Grid, Row, Col} from 'react-bootstrap';
 import './passwordchange.css';
 

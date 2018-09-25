@@ -1,14 +1,14 @@
 import React from 'react';
-import { db, auth } from '../firebase';
+import { db, auth } from '../../../firebase/firebase';
 import './getFromDb.css';
-import Context from '../firebasedb/validationContext/validationContext';
+import Context from '../../../firebase/firebasedb/validationContext/validationContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import HomePageWithoutData from './validationContext/NoDataComponent';
-import AddModal from '../../components/HomePage/AddModal/AddModal';
-import {Loader} from "../../components/Loader/Loader";
-import Overview from '../../components/HomePage/Overview/Overview';
-import EditModal from "./EditModal";
+import HomePageWithoutData from '../NoDataComponent';
+import AddModal from '../Add/AddModal/AddModal';
+import {Loader} from '../../Loader/Loader';
+import Overview from '../Overview/Overview';
+import EditModal from "./Edit/EditModal";
 
 class GetFromDb extends React.Component {
     constructor(props) {

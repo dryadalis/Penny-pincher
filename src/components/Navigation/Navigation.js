@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AuthUserContext from '../AuthUserContext';
+import AuthUserContext from '../../firebase/firebasedb/auth/AuthUserContext';
 import SignOutButton from '../SignForm/SignOut/SignOut';
 import * as routes from '../../constants/routes'
 import { Navbar,
@@ -40,8 +40,11 @@ const NavigationAuth = () =>
                 <NavItem href={routes.ACCOUNT}>
                     Account
                 </NavItem>
-                <NavItem>
+                <NavItem className='navbar--signOutButton'>
                     <SignOutButton />
+                </NavItem>
+                <NavItem className='navbar--signOut'>
+                    <SignOutButton /> Sign Out
                 </NavItem>
             </Nav>
         </Navbar.Collapse>

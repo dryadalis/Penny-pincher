@@ -3,7 +3,7 @@ import { withRouter } from  'react-router-dom';
 import { SignUpLink } from '../SignUp/SignUp';
 import { auth } from '../../../firebase/index';
 import * as routes from '../../../constants/routes';
-import { PasswordForgetLink} from "../../PasswordForget";
+import { PasswordForgetLink} from "../../PasswordForget/PasswordForget";
 import {Grid, Row,} from 'react-bootstrap';
 import { MainImage } from "../MainImage/MainImage";
 import MainForm from "../MainSignForm/MainForm";

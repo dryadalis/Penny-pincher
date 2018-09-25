@@ -1,7 +1,7 @@
 import React from 'react';
 import SumAllExpenses from './SumAllExpenses';
 import './Overview.css';
-import CurrentData from '../../components/CurrentData';
+import CurrentData from './CurrentData';
 const Overview = () =>
     <div style={{display:'flex', justifyContent: 'center'}}>
         <div className="overview--wrapper">

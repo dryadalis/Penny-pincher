@@ -1,5 +1,5 @@
 import React from 'react';
-import AddModal from '../../../components/HomePage/AddModal/AddModal'
+import AddModal from './Add/AddModal/AddModal'
 
 const HomePageWithoutData = () =>
     <div style={{marginTop: '90px', textAlign: 'center'}}>

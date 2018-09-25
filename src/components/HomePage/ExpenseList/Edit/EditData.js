@@ -1,10 +1,10 @@
 import React from 'react';
-import {auth, db} from "../firebase";
-import MainButton from '../../components/Buttons/MainButton';
-import Context from '../firebasedb/validationContext/validationContext';
-import SelectCategoryInput from "./validationContext/SelectCategoryInput";
-import PriceInput from "../../components/Inputs/PriceInput";
-import NoteInput from "../../components/Inputs/NoteInput";
+import {auth, db} from "../../../../firebase/firebase";
+import MainButton from '../../../Buttons/MainButton';
+import Context from '../../../../firebase/firebasedb/validationContext/validationContext';
+import SelectCategoryInput from "../../../Inputs/SelectCategoryInput";
+import PriceInput from "../../../Inputs/PriceInput";
+import NoteInput from "../../../Inputs/NoteInput";
 
 
 const byPropKey = (propertyName, value) => () => ({

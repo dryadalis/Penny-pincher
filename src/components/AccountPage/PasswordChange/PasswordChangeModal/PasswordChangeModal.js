@@ -2,8 +2,8 @@ import React from 'react';
 import {Modal,} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import PasswordChangeForm from "./PasswordChange";
-import './HomePage/AddModal/addmodal.css';
+import PasswordChangeForm from "../PasswordChangeForm/PasswordChange";
+import '../../../HomePage/Add/AddModal/addmodal.css';
 import './passwordChangeModal.css';
 
 class PasswordChangeModal extends React.Component {
