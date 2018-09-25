@@ -23,11 +23,17 @@ input[type=checkbox] {
     justify-content: center;
     align-items: center;
     min-height: 250px;
-    width: 100%;
+    width: 80%;
 }
 
 @media (max-width: 360px) {
     .sign--form {
         min-height: 200px;
+    }
+}
+
+@media (min-width: 768px) {
+    .sign--form {
+        width: 50%;
     }
 }

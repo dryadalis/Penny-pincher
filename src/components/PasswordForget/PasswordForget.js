@@ -12,7 +12,7 @@ import { faLock} from '@fortawesome/free-solid-svg-icons';
 const PasswordForgetPage = () =>
    <Grid >
        <Row className="passwordForget">
-           <Col xs={12} md={8} className="passwordForget--wrapper">
+           <Col xs={12}className="passwordForget--wrapper">
                 <FontAwesomeIcon icon={faLock} size='4x' className="passwordForget--icon"/>
                <h2>Forgot Password?</h2>
                 <p>Enter the email address you used to register, and we will send you an email to recover your password.</p>
