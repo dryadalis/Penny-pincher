@@ -5,6 +5,9 @@
     justify-content: center;
     align-items: center;
     min-height: 100px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 .getFromDb--item {
     display: flex;
@@ -50,8 +53,8 @@
 
 .getFromDb--addButton--wrapper {
    position: fixed;
-    bottom: 12%;
-    right: 28%;
+    bottom: 4%;
+    right: 8%;
 }
 
 .icon__trash:hover {
@@ -75,5 +78,16 @@
 
     40%, 60% {
         transform: translate3d(4px, 0, 0);
+    }
+}
+
+@media (min-width: 768px) {
+    .getFromDb--addButton--wrapper {
+        right: 30%;
+    }
+}
+@media (min-height: 732px) {
+    .getFromDb--addButton--wrapper {
+        bottom: 24%;
     }
 }

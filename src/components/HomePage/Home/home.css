@@ -3,13 +3,31 @@ body {
 }
 .home--header {
     color: white;
-    margin-top: 100px;
-    margin-bottom: 30px;
+    margin-top: 8%;
+    margin-left: 4%;
+    margin-bottom: 2%;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 50px;
 }
 .main-box {
-    min-height: 100vh;
+    min-height: calc(100vh - 66px);
+    padding: 0;
 }
+.home--wrapper {
+    padding: 0;
+}
+
+@media (max-width:768px) {
+    .home--header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        line-height: 58px;
+        font-size: 45px;
+        margin-top: 18%;
+    }
+}
+
 

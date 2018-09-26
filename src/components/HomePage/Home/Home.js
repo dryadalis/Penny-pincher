@@ -7,8 +7,8 @@ import withAuthorization from '../../../firebase/firebasedb/auth/withAuthorizati
 
 const HomePage = () =>
     <Grid className="main-box">
-        <Row>
-            <Col xs={12}>
+        <Row style={{margin: '0'}}>
+            <Col xs={12} className='home--wrapper'>
                 <h1 className='home--header'>Your Wallet</h1>
                 <GetFromDb />
             </Col>

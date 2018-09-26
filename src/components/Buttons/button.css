@@ -30,8 +30,8 @@
     border-color: #ffa366;
 }
 .add {
-    width: 85px;
-    height: 85px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     color: white;
     background-color: #00cccc;
@@ -83,5 +83,11 @@
     .secondary {
         margin-top: 2%;
     }
-}
 
+}
+@media (min-width: 666px) {
+    .add {
+        width: 85px;
+        height: 85px;
+    }
+}

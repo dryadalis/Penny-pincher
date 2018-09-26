@@ -5,7 +5,7 @@
     border-bottom: 1px solid rgba(0,0,0,0.5);
 }
 .modal--plusIcon {
-    transform: scale(2.5);
+    transform: scale(1.95);
 }
 .modal-title {
     font-size: 18px;
@@ -36,4 +36,10 @@
     display: inline-block;
     text-align: left;
     vertical-align: middle;
+}
+
+@media (min-width: 666px) {
+    .modal--plusIcon {
+        transform: scale(2.5);
+    }
 }
