@@ -76,6 +76,7 @@ class PasswordChangeForm extends React.Component {
                             type={type}
                             placeholder='Confirm New Password'
                         />
+                        <br/>
                         <MainButton type='secondary' disabled={isInvalid} title={"Confirm"} size={'small'} onClick={this.onSubmit}/>
                         { error && <p>{error.message}</p> }
                     </form>

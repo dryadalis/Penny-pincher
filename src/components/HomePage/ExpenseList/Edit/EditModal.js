@@ -3,6 +3,7 @@ import {Modal} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPencilAlt,} from "@fortawesome/free-solid-svg-icons/index";
 import EditData from './EditData';
+import './edit.css';
 
 class EditModal extends React.Component {
     constructor(props, context) {
@@ -23,12 +24,7 @@ class EditModal extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.handleShow}
-                    style={{
-                        backgroundColor:'transparent',
-                        border: 'none',
-                    }}
-                >
+                <button onClick={this.handleShow} className="btn--edit">
                     <FontAwesomeIcon icon={faPencilAlt} />
                 </button>
 

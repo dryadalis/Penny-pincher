@@ -39,7 +39,7 @@
     text-align: center;
     box-shadow: 0 6px 10px 0 rgba(0,0,0,0.6);
 }
-.secondary:focus, .primary:focus, .add:focus {
+.secondary:focus, .primary:focus, .add:focus, .signOut:focus  {
     outline: none;
 }
 .add:hover {
@@ -54,6 +54,7 @@
     color: #ff751a;
     margin-right: 2%;
 }
+
 
 .large {
     width: 280px;
@@ -93,9 +94,10 @@
 }
 
 @media (max-width: 768px) {
-    .primary {
+    .primary, .secondary {
         width: 100%;
     }
+
 }
 
 

@@ -5,3 +5,10 @@
     line-height: 46px;
     font-size: 30px;
 }
+@media (max-width: 768px) {
+    .account--header {
+        margin-top: 22%;
+        width: 100%;
+        font-size: 22px;
+    }
+}
