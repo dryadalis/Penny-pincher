@@ -91,3 +91,11 @@
         height: 85px;
     }
 }
+
+@media (max-width: 768px) {
+    .primary {
+        width: 100%;
+    }
+}
+
+

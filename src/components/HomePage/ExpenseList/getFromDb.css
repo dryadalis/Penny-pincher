@@ -53,8 +53,8 @@
 
 .getFromDb--addButton--wrapper {
    position: fixed;
-    bottom: 4%;
-    right: 8%;
+    bottom: 3%;
+    right: 3%;
 }
 
 .icon__trash:hover {
@@ -81,13 +81,8 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
     .getFromDb--addButton--wrapper {
-        right: 30%;
-    }
-}
-@media (min-height: 732px) {
-    .getFromDb--addButton--wrapper {
-        bottom: 24%;
+        right: 28%;
     }
 }

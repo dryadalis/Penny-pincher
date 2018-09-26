@@ -43,3 +43,10 @@
         transform: scale(2.5);
     }
 }
+
+@media (max-width: 767px ) {
+    .modal-content {
+        width: 300px;
+    }
+}
+

@@ -7,6 +7,7 @@ const SelectCategoryInput = ({value, onChange,}) => (
                componentClass='select'
                value={value}
                onChange={onChange}
+               className="selectInput"
            >
                <option value="" defaultValue disabled>Select category</option>
                <option value="bills&utilities">Bills & Utilities</option>
