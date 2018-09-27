@@ -40,3 +40,27 @@
     display: block;
     margin-top: 16%;
 }
+
+@media (max-width:973px) {
+    .landingPage--image {
+        margin-top: 0;
+    }
+    .landingPage--text {
+        height: 90vh;
+    }
+    .landingPage--text__header {
+        font-size: 50px;
+    }
+}
+
+@media (min-height: 1366px) {
+    .landingPage {
+        min-height: 0;
+    }
+    .landingPage--text {
+        height: 45vh;
+    }
+    .landingPage--image {
+        margin-top: 46%;
+    }
+}

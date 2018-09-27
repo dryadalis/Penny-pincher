@@ -28,3 +28,17 @@ svg {
     max-width: 90%;
     max-height: 200px;
 }
+
+@media (max-width:973px) {
+    .landingPage2--text {
+        width: 100%;
+    }
+    .landingPage2--column {
+        margin-bottom: 6%;
+    }
+}
+@media (min-height: 1366px) {
+    .landingPage2 {
+        height: 50vh;
+    }
+}

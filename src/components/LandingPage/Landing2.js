@@ -9,7 +9,7 @@ import './Landing2.css';
 const LandingPage2 = () =>
     <Grid className='landingPage2'>
         <Row className='landingPage2--wrapper'>
-            <Col xs={4} className="landingPage2--column">
+            <Col xs={12} md={4} className="landingPage2--column">
                 <ReactSVG src={img1}/>
                 <div className='landingPage2--text'>
                     <h3>Money tracker</h3>
@@ -18,7 +18,7 @@ const LandingPage2 = () =>
                     </p>
                 </div>
             </Col>
-            <Col xs={4} className="landingPage2--column">
+            <Col xs={12} md={4} className="landingPage2--column">
                 <ReactSVG src={img2} />
                 <div className='landingPage2--text'>
                     <h3>Saving plan</h3>
@@ -27,7 +27,7 @@ const LandingPage2 = () =>
                     </p>
                 </div>
             </Col>
-            <Col xs={4} className="landingPage2--column">
+            <Col xs={12} md={4} className="landingPage2--column">
                 <ReactSVG src={img3}/>
                 <div className='landingPage2--text'>
                     <h3>Expenditure control</h3>
