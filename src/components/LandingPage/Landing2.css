@@ -1,0 +1,30 @@
+.landingPage2 {
+    background-color: #ffff99;
+    min-height: 100vh;
+
+}
+.landingPage2--wrapper {
+    margin-top: 15%;
+    padding-right: 0;
+
+}
+.landingPage2--text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 310px;
+}
+.landingPage2--text p {
+    text-align: center;
+}
+.landingPage2--column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+svg {
+    max-width: 90%;
+    max-height: 200px;
+}

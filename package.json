@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@fortawesome/free-brands-svg-icons": "^5.3.1",
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "@fortawesome/react-fontawesome": "^0.1.2",
     "classnames": "^2.2.6",
@@ -13,7 +14,8 @@
     "react-dom": "^16.4.2",
     "react-responsive-modal": "^3.3.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-svg": "^6.0.15"
   },
   "scripts": {
     "start": "react-scripts start",

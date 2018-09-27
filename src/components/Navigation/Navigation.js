@@ -1,5 +1,4 @@
 import React from 'react';
-
 import AuthUserContext from '../../firebase/firebasedb/auth/AuthUserContext';
 import SignOutButton from '../SignForm/SignOut/SignOut';
 import * as routes from '../../constants/routes'

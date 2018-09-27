@@ -6,6 +6,7 @@ import MainButton from "../../Buttons/MainButton";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 
+
 const SignOutButton = withRouter(({ history }) => (
     <MainButton
         onClick={() => {

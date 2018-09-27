@@ -3,6 +3,7 @@
     min-height: 100vh;
     background-color:  #99ddff;
     color: white;
+    margin: 0;
 }
 .landingPage--text {
     display: flex;
@@ -13,7 +14,7 @@
 }
 .landingPage--text__header {
    text-align: center;
-    font-size: 70px;
+    font-size: 60px;
     font-weight: bolder;
     text-transform: uppercase;
 }
@@ -22,4 +23,20 @@
     margin-top: 8%;
     text-align: center;
     font-family: 'Pacifico', sans-serif;
+}
+.landingPage--icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    position: fixed;
+    left: 2%;
+}
+.landingPage--icons a {
+    margin-top: 100%;
+}
+.landingPage--image {
+    max-width: 100%;
+    display: block;
+    margin-top: 16%;
 }
